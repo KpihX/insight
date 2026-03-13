@@ -85,11 +85,13 @@ intelligently for all 4 stakeholder roles.
 - **SAT Mar 14** — 9 AM: Hacking · **4 PM: Pitching Workshop (Yue Wu)** · 7 PM+: Late Night Hacking
 - **SUN Mar 15** — 9 AM: Hacking & Pitch Prep · **11:30 AM: ★ SUBMISSION** · 1 PM: Pitches · 2:30 PM: Award
 
-### 7. Tech Stack (Official Hackathon Tools) [CLAUDE]
-- **AI Platform:** Google AI Studio · Gemini 2.5 Flash Preview (officially recommended by organizers)
-- **Accepted deliverable formats:** AppScript, Python, or GitHub repo link
+### 7. Tech Stack [CLAUDE]
+- **Language:** TypeScript (Node.js 20+, ESM, strict mode)
+- **Package manager:** `npm` · `tsx` for dev execution (no compile step in dev)
+- **AI Platform:** Google AI Studio · Gemini 2.5 Flash Preview (`@google/generative-ai` SDK)
 - **Communication channel:** Discord — IPAI Hackathon server (`#ask-a-mentor`, `#community-hub`)
-- **Open architectural decision:** AppScript (Google Workspace native) vs Python (Gemini API + web UI)
+- **Deliverable format:** GitHub repo link (TypeScript source)
+- **Source structure:** `src/types.ts` · `src/config.ts` · `src/classifier.ts` · `src/index.ts`
 
 ### 8. Key People [CLAUDE]
 **Mentors** (Discord `#ask-a-mentor`):

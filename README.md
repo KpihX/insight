@@ -179,10 +179,22 @@ SUN  Mar 15
 
 ## 🛠️ Tech Stack
 
-- **AI Engine:** Google AI Studio · Gemini 2.5 Flash Preview (official hackathon platform)
-- **Primary Language:** Python 3.12+ (managed via `uv`)
-- **Accepted deliverable formats:** AppScript, Python, or GitHub repo link
+- **Language:** TypeScript (Node.js 20+, ESM)
+- **Package manager:** `npm`
+- **AI Engine:** Google AI Studio · Gemini 2.5 Flash Preview — `@google/generative-ai` SDK
+- **Dev runner:** `tsx` (direct TypeScript execution, no compile step in dev)
 - **Communication:** Discord — IPAI Hackathon server (`#ask-a-mentor`, `#community-hub`, `#ask-an-organizer`)
+
+### Project Structure
+
+```
+src/
+  index.ts        ← entry point (classification smoke-test + main)
+  classifier.ts   ← Gemini classification pipeline
+  config.ts       ← config loader (dotenv + typed settings)
+  types.ts        ← shared domain types (SchoolMessage, Classification, ...)
+  .env.example    ← secrets template (copy to .env, never commit)
+```
 
 ---
 
@@ -215,10 +227,17 @@ SUN  Mar 15
 
 ```bash
 # Install dependencies
-/home/kpihx/.local/bin/uv sync
+npm install
 
-# Run (placeholder — architecture TBD in Phase 1)
-/home/kpihx/.local/bin/uv run python -m insight
+# Set up your Gemini API key
+cp src/.env.example src/.env
+# → edit src/.env and fill in GEMINI_API_KEY
+
+# Run classification smoke-test (dev mode, no compile step)
+npm run dev
+
+# Type-check only
+npm run typecheck
 ```
 
 See `TODO.md` for the active sprint backlog and architectural decisions pending.

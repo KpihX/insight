@@ -10,6 +10,17 @@
 - [x] Add `.agent/AGENT.md` and cross-agent symlinks (`CLAUDE.md`, `GEMINI.md`)
 - [x] Add initial project documentation skeleton
 
+## ✅ Done — v0.3.0 (TypeScript Migration, 2026-03-13)
+- [x] Migrate from Python to TypeScript (Node 20, ESM, strict)
+- [x] `package.json` + `tsconfig.json` bootstrapped
+- [x] Domain type system: `SchoolMessage`, `Classification`, `DashboardView`
+- [x] Gemini classification pipeline: `src/classifier.ts`
+- [x] Config loader with dotenv: `src/config.ts`
+- [x] Entry point smoke-test: `src/index.ts` (3 school message examples)
+- [x] Secrets template: `src/.env.example`
+- [ ] **Run `npm install`** to materialize `node_modules/`
+- [ ] **Add Gemini API key** to `src/.env`
+
 ## ✅ Done — v0.2.0 (Claude Reinit, 2026-03-13)
 - [x] Full domain-aware reinit: school ecosystem context, team, deliverables, eval criteria
 - [x] Rewrite `README.md` — verbose, stakeholder model, sprint timeline, domain taxonomy

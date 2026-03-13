@@ -1,0 +1,13 @@
+node_modules/
+dist/
+
+# Secrets — NEVER commit
+.env
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
