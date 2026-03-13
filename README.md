@@ -7,6 +7,12 @@ IPAI Foundation × Hi! PARIS · Heilbronn, Germany · March 13–15, 2026
 
 ---
 
+## ⚠️ Challenge Framing (Official — Hannes, Discord)
+
+> *"AI-driven solutions that help integrate and simplify communication flows. A key focus should be on holistic communication concepts that connect different systems, processes and stakeholders. Consider how **existing school workflows or operational touchpoints could trigger smarter communication and coordination**."*
+
+---
+
 ## 🏫 Problem First: Why School Communication Is Broken
 
 Schools operate at the intersection of multiple stakeholder groups — students, parents, teachers,
@@ -60,14 +66,50 @@ INSIGHT:  The classification problem IS the core problem.
 
 ---
 
-## 🎯 Goal & Expected Outcome
+## 🎯 Our Angle: Event-Driven Orchestration (not another inbox)
 
-**Goal:** Build a **central, intelligent dashboard** that bundles school messages, appointments,
-and tasks for all stakeholder roles — with AI-powered classification as the core spine.
+**The competitive landscape** — sdui, SchoolFox, IServ, Eltern-App — are all **channels**: better pipes for pushing messages. They do not think. They do not detect silence. They do not act unprompted.
 
-**Outcome:**
-1. **Fitting document classification** — each incoming communication is typed, tagged, and routed
-2. **Intuitive interface** — low-friction UX accessible to teachers, parents, secretariat, students
+**insight's lane:** the intelligence layer **above** the pipes.
+
+```
+sdui / IServ / Eltern-App
+    "Here is a message."
+         ↓
+insight
+    "This event happened.
+     Here is who needs to know.
+     Here is what hasn't been acknowledged.
+     Here is what I've drafted for your approval."
+```
+
+**Goal:** Build an event-driven school communication orchestrator.
+When an **operational event** occurs (absence, deadline, admin notice), insight automatically:
+1. classifies it — type · audience · priority
+2. routes it to the right stakeholders
+3. tracks acknowledgment
+4. detects gaps (Dead Zone) and generates personalized nudges
+5. drafts actions for human approval (HITL)
+
+### 3 Operational Triggers (MVP scope)
+
+| Trigger | Event | insight Action |
+|---------|-------|----------------|
+| `absence_report` | Teacher marks student absent | Notify parent → track → escalate if no response |
+| `form_deadline` | Permission slip approaching D-day | Track unsigned → proactive nudge → HITL draft |
+| `admin_notice` | Secretariat posts notice | Classify audience → route → detect calendar conflicts |
+
+### Input Specification
+
+```
+FORMAT    JSON event objects
+FIELDS    event_type · stakeholder_roles · deadline · urgency_hint · body
+SOURCE    Webhook POST to n8n (simulates live event in demo)
+DATASET   30 synthetic events — Gemini-generated, 3 types × 10 examples
+```
+
+**Keywords:** `event_type` · `classification` · `audience` · `action_chain` ·
+`nudge_text` · `acknowledgment_status` · `escalation_flag`
 
 ---
 
@@ -179,21 +221,38 @@ SUN  Mar 15
 
 ## 🛠️ Tech Stack
 
-- **Language:** TypeScript (Node.js 20+, ESM)
-- **Package manager:** `npm`
-- **AI Engine:** Google AI Studio · Gemini 2.5 Flash Preview — `@google/generative-ai` SDK
-- **Dev runner:** `tsx` (direct TypeScript execution, no compile step in dev)
-- **Communication:** Discord — IPAI Hackathon server (`#ask-a-mentor`, `#community-hub`, `#ask-an-organizer`)
+```
+┌─────────────────────────────────────────────────────────┐
+│  n8n (Docker)  — orchestration layer                    │
+│  Triggers: webhook · cron · Gmail · Discord · HTTP      │
+├─────────────────────────────────────────────────────────┤
+│  insight-api (TypeScript / Node 20)  — AI layer         │
+│  POST /classify  GET /dashboard/:role                   │
+│  GET /dead-zones  POST /nudge  GET /morning-brief/:role │
+├─────────────────────────────────────────────────────────┤
+│  Gemini 2.5 Flash  — classification + nudge generation  │
+│  @google/generative-ai SDK                              │
+└─────────────────────────────────────────────────────────┘
+Output: Discord webhook (real delivery, visible in demo)
+Deploy: docker compose up  (n8n + insight-api, one command)
+```
 
-### Project Structure
+### Source Structure
 
 ```
 src/
-  index.ts        ← entry point (classification smoke-test + main)
+  index.ts        ← HTTP API entry point (Express/Hono routes)
   classifier.ts   ← Gemini classification pipeline
   config.ts       ← config loader (dotenv + typed settings)
-  types.ts        ← shared domain types (SchoolMessage, Classification, ...)
+  types.ts        ← domain types (SchoolEvent, Classification, ...)
   .env.example    ← secrets template (copy to .env, never commit)
+data/
+  events/         ← 30 synthetic school events (JSON, Gemini-generated)
+    absence/      ← 10 absence_report examples
+    forms/        ← 10 form_deadline examples
+    notices/      ← 10 admin_notice examples
+n8n/
+  workflows/      ← exported n8n workflow JSON (version-controlled)
 ```
 
 ---

@@ -29,6 +29,12 @@
 
 ---
 
+## 🔥 Phase 0 — Immediate Setup (Friday morning)
+- [ ] Choose a team name
+- [ ] Set up Gmail account for Google AI environment access
+- [ ] Set up Discord — join IPAI Hackathon server, find `#ask-a-mentor`
+- [ ] Contact Katrin Feierling-Sülzle (teacher mentor) — validate 3 trigger scenarios
+
 ## 🔥 Phase 1 — Design (Friday Mar 13)
 
 ### Team & Domain
@@ -39,22 +45,39 @@
   - [ ] Journey C: Secretariat routes an administrative document
 - [ ] Contact mentor Katrin Feierling-Sülzle (teacher) — validate domain assumptions early
 
-### Architecture Decision (BLOCKING)
-- [ ] Choose runtime: **AppScript** (Google Workspace native) vs **Python** (Gemini API + web UI)
-  - AppScript: deeper Gmail/Calendar/Drive integration, demo-friendly for judges
-  - Python: more control, aligned with KpihX stack, richer classification pipeline
-- [ ] Define MVP scope — what is strictly IN vs OUT for 46h sprint
+### Architecture (decided ✅)
+- [x] Stack: n8n (orchestration) + TypeScript HTTP API (AI logic) + Docker Compose
+- [x] Scope: 3 operational triggers — absence_report · form_deadline · admin_notice
+- [x] No real dataset needed — generate 30 synthetic events with Gemini
 
-### Classification Design
-- [ ] Define classification taxonomy:
-  - Type labels: `[urgent, informational, action-required, event]`
-  - Audience labels: `[student, parent, teacher, secretariat, all]`
-  - Priority: `[high, medium, low]`
-- [ ] Identify 10–15 realistic school communication examples (seed dataset for testing)
+### Dataset Generation (FIRST TASK)
+- [ ] Generate 10 × absence_report JSON events with Gemini
+- [ ] Generate 10 × form_deadline JSON events with Gemini
+- [ ] Generate 10 × admin_notice JSON events with Gemini
+- [ ] Store in `data/events/{absence,forms,notices}/`
+
+### n8n Setup
+- [ ] `docker compose up` — n8n + insight-api running locally
+- [ ] Wire Webhook trigger node (receives JSON event POST)
+- [ ] Wire HTTP node → `POST insight-api/classify`
+- [ ] Wire Cron node (7:45 AM) → `GET insight-api/morning-brief/:role`
+- [ ] Wire Cron node (every 2h) → `GET insight-api/dead-zones`
+- [ ] Wire Discord webhook node (notification output)
+- [ ] Export workflow JSON → `n8n/workflows/`
+
+### insight-api (TypeScript)
+- [ ] Add Express/Hono HTTP server to `src/index.ts`
+- [ ] `POST /classify` — takes SchoolEvent → returns Classification
+- [ ] `GET /dashboard/:role` — returns role-filtered classified events
+- [ ] `GET /dead-zones` — returns unacknowledged urgent items > threshold
+- [ ] `POST /nudge` — Gemini generates personalized message for recipient
+- [ ] `GET /morning-brief/:role` — Gemini digest for role
+- [ ] In-memory state store (Map) — acknowledgment tracking
+- [ ] `POST /acknowledge` — marks event as read by role
 
 ### Prototyping
-- [ ] Set up Google AI Studio account + test Gemini 2.5 Flash on classification prompt
-- [ ] Sketch dashboard wireframe (paper or digital): role-based view, priority lane, filters
+- [ ] Set up Google AI Studio + confirm Gemini 2.5 Flash API key works
+- [ ] Sketch dashboard wireframe: Teacher / Parent / Secretariat lanes
 
 ---
 
@@ -82,9 +105,10 @@
 
 ---
 
-## 📌 Open Architectural Decisions
+## 📌 Open Decisions
 
-- [ ] **Runtime**: AppScript vs Python — decide in Phase 1 (blocks everything)
-- [ ] **Classification granularity**: binary (urgent/not-urgent) vs full 4-type taxonomy
-- [ ] **Multi-role dashboard**: single app with role-based views vs separate lightweight views
-- [ ] **Data source**: mock/synthetic school data vs real Gmail API integration
+- [ ] **Dashboard UI**: simple HTML served by insight-api vs n8n's built-in webhook response view
+- [ ] **Dead Zone threshold**: 4h / 12h / 24h — validate with Katrin (teacher)
+- [ ] **Live demo input method**: curl POST vs simple HTML form vs Discord slash command
+- [ ] **n8n hosting**: local Docker (shared via ngrok) vs IPAI-provided infra
+- [ ] **Team name** — needed Friday morning

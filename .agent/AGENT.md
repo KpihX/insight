@@ -48,6 +48,9 @@
 
 ### 3. Challenge 2: Clean Communication — Domain [CLAUDE]
 
+#### Official Challenge Statement (from Hannes, Discord 11:01)
+> "AI-driven solutions that help integrate and simplify communication flows and make information accessible in a structured and intuitive way. A key focus should be on **holistic communication concepts that connect different systems, processes and stakeholders**. Consider how **existing school workflows or operational touchpoints could trigger smarter communication and coordination**."
+
 #### Problem (SCHOOL ecosystem — not generic enterprise)
 Communication in schools is fragmented across digital, physical, and operational channels.
 The domain is specifically the **school stakeholder ecosystem**: Teachers, Parents, Secretariat, Schoolchildren.
@@ -58,15 +61,36 @@ Communication taxonomy (measured):
 - **School Operations**: 38 items (24.1%) — Calendar Data (15), Forms (10), Administrative Notices (13)
 - **Roles & Protocols**: 20 items (12.7%) — Parents (8), Schoolchildren (5), Teachers (5), Secretariat (2), Notification Protocols (8)
 
-Root cause: **no shared classification model** for what communication belongs where, for whom, at what urgency.
+Root cause: NOT "too many apps." Root cause: **no event-driven intelligence layer** — nothing watches operational events and orchestrates the right communication automatically.
+
+Competitive landscape: sdui, SchoolFox, IServ, Eltern-App all exist as channels (better pipes).
+**insight's lane**: the brain above the pipes — event-driven orchestration, gap detection, proactive escalation.
+
+#### Focused Angle — Event-Driven Orchestration [CLAUDE]
+insight is NOT a better inbox. It watches **operational events** (absence, deadline, admin notice) and orchestrates the right communication automatically — including detecting when communication FAILED to land and acting on the silence.
+
+#### 3 Operational Triggers (MVP scope) [CLAUDE]
+1. **absence_report** — teacher marks student absent → notify parent → if no response in Xh → escalate
+2. **form_deadline** — permission slip approaching deadline → track response rate → proactive nudge for unsigned → HITL draft for teacher
+3. **admin_notice** — secretariat posts notice → classify audience → route → detect contradictions (e.g., vs calendar)
+
+#### Input Specification [CLAUDE]
+- **Format**: JSON event objects (synthetic, Gemini-generated — 10 examples per trigger type = 30 total)
+- **Event fields**: `event_type · stakeholder_roles · deadline · urgency_hint · body`
+- **Source in demo**: webhook POST to n8n → simulates live event arriving
+- **Keywords**: event_type · classification · audience · action_chain · nudge_text · acknowledgment_status · escalation_flag
+
+#### Dataset Strategy [CLAUDE]
+No real dataset available (and not needed). Generate 30 synthetic school events with Gemini covering the 3 trigger scenarios. JSON format. Tailored exactly to demo needs. This IS the dataset.
 
 #### Goal
-Create a central dashboard that **bundles and classifies** school messages, appointments, and tasks
-intelligently for all 4 stakeholder roles.
+Build an event-driven school communication orchestrator: operational events trigger intelligent, role-aware communication chains — with AI gap detection and proactive escalation when communication fails to land.
 
 #### Expected Outcome
-- Fitting classification of documents (type + audience + priority)
-- Intuitive, role-based interface
+- Fitting classification of events → action chains
+- Proactive nudges for unacknowledged urgent items (Dead Zone Detector)
+- Role-based dashboard (Teacher / Parent / Secretariat)
+- Live simulation demo-able end-to-end
 
 ### 4. Deliverables & Deadline [CLAUDE]
 **DEADLINE: Sunday March 15, 2026 · 11:30 AM**
@@ -86,12 +110,15 @@ intelligently for all 4 stakeholder roles.
 - **SUN Mar 15** — 9 AM: Hacking & Pitch Prep · **11:30 AM: ★ SUBMISSION** · 1 PM: Pitches · 2:30 PM: Award
 
 ### 7. Tech Stack [CLAUDE]
-- **Language:** TypeScript (Node.js 20+, ESM, strict mode)
-- **Package manager:** `npm` · `tsx` for dev execution (no compile step in dev)
-- **AI Platform:** Google AI Studio · Gemini 2.5 Flash Preview (`@google/generative-ai` SDK)
-- **Communication channel:** Discord — IPAI Hackathon server (`#ask-a-mentor`, `#community-hub`)
-- **Deliverable format:** GitHub repo link (TypeScript source)
+- **Orchestration:** n8n (Docker) — handles all I/O: webhook triggers, cron, Gmail, Discord, HTTP nodes
+- **AI Layer:** TypeScript (Node.js 20+, ESM) exposed as HTTP API — Gemini 2.5 Flash for classification + nudge generation
+- **Package manager:** `npm` · `tsx` for dev execution
+- **Deployment:** Docker Compose (`n8n` + `insight-api`) — shared instance, one command
+- **Simulation:** webhook POST to n8n triggers live event during demo
+- **Notification output:** Discord webhook (real delivery, visible to judges)
+- **Dataset:** 30 synthetic JSON events (Gemini-generated, 3 trigger types × 10)
 - **Source structure:** `src/types.ts` · `src/config.ts` · `src/classifier.ts` · `src/index.ts`
+- **Deliverable format:** GitHub repo link
 
 ### 8. Key People [CLAUDE]
 **Mentors** (Discord `#ask-a-mentor`):
