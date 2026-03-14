@@ -1,10 +1,9 @@
 services:
-
   mongo:
     image: mongo:7
     restart: unless-stopped
     environment:
-      MONGO_INITDB_DATABASE: insight
+      MONGO_INITDB_DATABASE: nextgen
     volumes:
       - mongo-data:/data/db
     healthcheck:
@@ -14,7 +13,16 @@ services:
       retries: 10
     networks:
       - insight-net
-    # Not exposed on host. n8n reaches it through Docker DNS: mongo:27017
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant-data:/qdrant/storage
+    networks:
+      - insight-net
 
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest
@@ -28,6 +36,8 @@ services:
     depends_on:
       mongo:
         condition: service_healthy
+      qdrant:
+        condition: service_started
     networks:
       - insight-net
 
@@ -38,3 +48,4 @@ networks:
 volumes:
   mongo-data:
   n8n-data:
+  qdrant-data:

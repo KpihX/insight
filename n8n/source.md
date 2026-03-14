@@ -1,105 +1,66 @@
 # insight — Source Layer
 
-> Event-first trigger abstraction.
+## Live connectors
+
+### IMAP
 
 ```text
-                           SCHOOL INPUT SOURCES
-
-    +------------------+     +--------------------------+     +----------------------+
-     | EMAIL EVENTS     |     | MESSAGE EVENTS           |     | WEBHOOK / API        |
-     |                  |     |                          |     | EVENTS               |
-     | - IMAP mailbox   |     | - WhatsApp groups       |     | - school portal      |
-     |                  |     |                          |     |                      |
-     |                  |     |                          |     |                      |
-    +------------------+     +--------------------------+     +----------------------+
-             \                         |                                 /
-              \                        |                                /
-               \                       |                               /
-                +-----------------------------------------------------+
-                | Trigger / Adapter Layer                             |
-                | - listen                                            |
-                | - extract                                           |
-                | - normalize                                          |
-                +-----------------------------------------------------+
-                                         |
-                                         v
-                            +------------------------------+
-                            | SchoolEvent                  |
-                            | (Normalized JSON)            |
-                            +------------------------------+
-                
+Email Trigger (IMAP)
+-> normalize-email
 ```
+
+Used when a real mailbox is connected to the ingestion workflow.
+
+### WhatsApp
 
 ```text
-Current implementation focus
-----------------------------
-  - IMAP mailbox
-  - WhatsApp groups
-  - school portal webhook
+Baileys bridge
+-> POST /webhook/wa-event or /webhook-test/wa-event
+-> WhatsApp Trigger
+-> normalize-wa
 ```
+
+Important:
+
+- the bridge uses **pairing code mode**
+- it does **not** use QR mode
+- runtime auth files are stored under `wa-auth/`
+
+### School portal
 
 ```text
-Demo mode
----------
-  - one test email account
-  - one WhatsApp group listener
-
-Real school mode
-----------------
-  - one institutional IMAP mailbox
-  - one or more school WhatsApp groups
-  - one school portal webhook
+POST /webhook/portal-event
+-> School Portal Trigger
+-> normalize-webhook
 ```
 
-## Trigger Layer
+## Demo-only connectors
 
-```text
-TriggerEvent (Raw JSON)
-├── MailboxEvent
-├── GroupMessagingEvent
-└── WebhookEvent
-        |
-        v
-SchoolEvent (Normalized JSON)
-```
+The ingestion workflow also contains two deterministic demo inputs:
 
-## Trigger Output — SchoolEvent
+- `email_json_record`
+- `msg_json_record`
+
+They are useful when:
+
+- you do not want to wait for real live inputs,
+- you want predictable smoke-test behavior,
+- you want to demo the pipeline without touching production channels.
+
+## Normalized event model
+
+All connectors converge to the same intermediate shape:
 
 ```json
 {
   "source_system": "imap | whatsapp | school_portal",
   "source_channel": "mailbox | group_messaging | webhook",
-  "sender_name": "string | null",
-  "sender_contact": "string | null",
-  "receivers": [
-    "email@school.de",
-    "49123456789",
-    "*",
-    "teachers",
-    "admin"
-  ],
-  "subject": "string | null",
-  "content": "string",
-  "timestamp": "ISO-8601 string",
-  "original_id": "string"
+  "sender_name": "Jane Doe",
+  "sender_contact": "+15559876543",
+  "receivers": ["teachers"],
+  "subject": null,
+  "content": "Message body",
+  "timestamp": "2026-03-14T07:15:00.000Z",
+  "original_id": "SEED-EVENT-0001"
 }
 ```
-
-```text
-Receivers at source stage
--------------------------
-`receivers` contains raw receiver references extracted from the trigger:
-- email addresses
-- messaging identifiers
-- routing aliases
-
-Alias conventions
------------------
-*         = all staff
-teachers  = all teachers
-admin     = administration / school life / secretariat
-```
-
-## Keywords
-
-`event-first` `trigger abstraction` `TriggerEvent` `SchoolEvent` `MailboxEvent` `GroupMessagingEvent` `WebhookEvent` `group_messaging` `email events` `whatsapp group events` `school portal webhook events`

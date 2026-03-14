@@ -2,301 +2,420 @@
 
 > **0 Trust — 100% Control | 0 Magic — 100% Transparency | 0 Hardcoding — 100% Flexibility**
 
-Hackathon project — **Team 7** · **Challenge 2: Clean Communication**
-IPAI Foundation × Hi! PARIS · Heilbronn, Germany · March 13–15, 2026
+`insight` is a lightweight school communication operating layer built during the Hi! PARIS × IPAI hackathon in March 2026. The project does not try to replace every school channel. It sits above them, converts incoming communication into a shared event model, classifies each event with Gemini, stores the result in MongoDB, and exposes a small dashboard API for a future frontend.
 
 ---
 
-## ⚠️ Challenge Framing (Official — Hannes, Discord)
+## 1. Problem First
 
-> *"AI-driven solutions that help integrate and simplify communication flows. A key focus should be on holistic communication concepts that connect different systems, processes and stakeholders. Consider how **existing school workflows or operational touchpoints could trigger smarter communication and coordination**."*
+Schools do not suffer from a lack of messaging channels. They suffer from a lack of shared structure.
 
----
-
-## 🏫 Problem First: Why School Communication Is Broken
-
-Schools operate at the intersection of multiple stakeholder groups — students, parents, teachers,
-and secretariat — each generating and receiving communication through radically different channels.
-The result is a fragmented, high-friction communication landscape that causes **information loss**,
-**coordination failures**, and **daily stress** for all parties.
-
-```
-SCHOOL COMMUNICATION FRAGMENTATION (measured)
-────────────────────────────────────────────────────────────────
-CATEGORY             VOLUME    BREAKDOWN
-────────────────────────────────────────────────────────────────
-Digital Comm          47.4%    Mails (35) · Short Chats (20)
-                               Internal Mail (15) · Notifications (5)
-
-Written & Physical    28.5%    Letters (25) · Mail (10)
-                               Information Sheets (10)
-
-School Operations     24.1%    Calendar Data (15) · Forms (10)
-                               Administrative Notices (13)
-
-Roles & Protocols     12.7%    Parents (8) · Schoolchildren (5)
-                               Teachers (5) · Secretariat (2)
-                               Notification Protocols (8)
-────────────────────────────────────────────────────────────────
-Total items mapped: 158 across 4 stakeholder roles
+```text
+email inboxes          WhatsApp groups          school portal notices
+      \                      |                        /
+       \                     |                       /
+        \                    |                      /
+         -> fragmented operational signals -> manual triage -> missed context
 ```
 
-The school ecosystem is not a company Slack workspace. It is a **multi-role, multi-channel,
-high-stakes coordination space** where a missed notification can mean a missed permission slip,
-a misrouted urgent message, or a parent left uninformed about a critical event.
+The same absence can appear as:
 
-### The Root Cause — It Is Not "Too Many Apps"
+- a parent WhatsApp message,
+- an email to the secretariat,
+- a portal update,
+- and an informal staff relay.
 
-```
-SYMPTOM:  "We have email, WhatsApp, paper forms, a school portal, and SMS"
-                              ↓
-ROOT CAUSE: No shared model of what communication belongs where,
-            for whom, at what urgency level.
-                              ↓
-INSIGHT:  The classification problem IS the core problem.
-          Solve classification → you can route, prioritize, and surface.
-```
+Without a shared model, every stakeholder re-triages the same thing.
 
-### Why Existing Tools Fail
+`insight` solves the classification and visibility layer:
 
-- Teachers waste time triaging non-urgent messages alongside urgent ones
-- Parents receive physical letters, emails, and app notifications with no unified view
-- Secretariat manages 4 different communication categories with no single source of truth
-- Students receive information through fragmented channels they rarely check
-
----
-
-## 🎯 Our Angle: Event-Driven Orchestration (not another inbox)
-
-**The competitive landscape** — sdui, SchoolFox, IServ, Eltern-App — are all **channels**: better pipes for pushing messages. They do not think. They do not detect silence. They do not act unprompted.
-
-**insight's lane:** the intelligence layer **above** the pipes.
-
-```
-sdui / IServ / Eltern-App
-    "Here is a message."
-         ↓
-insight
-    "This event happened.
-     Here is who needs to know.
-     Here is what hasn't been acknowledged.
-     Here is what I've drafted for your approval."
-```
-
-**Goal:** Build an event-driven school communication orchestrator.
-When an **operational event** occurs (absence, deadline, admin notice), insight automatically:
-1. classifies it — type · audience · priority
-2. routes it to the right stakeholders
-3. tracks acknowledgment
-4. detects gaps (Dead Zone) and generates personalized nudges
-5. drafts actions for human approval (HITL)
-
-### 3 Operational Triggers (MVP scope)
-
-| Trigger | Event | insight Action |
-|---------|-------|----------------|
-| `absence_report` | Teacher marks student absent | Notify parent → track → escalate if no response |
-| `form_deadline` | Permission slip approaching D-day | Track unsigned → proactive nudge → HITL draft |
-| `admin_notice` | Secretariat posts notice | Classify audience → route → detect calendar conflicts |
-
-### Input Specification
-
-```
-FORMAT    JSON event objects
-FIELDS    event_type · stakeholder_roles · deadline · urgency_hint · body
-SOURCE    Webhook POST to n8n (simulates live event in demo)
-DATASET   30 synthetic events — Gemini-generated, 3 types × 10 examples
-```
-
-**Keywords:** `event_type` · `classification` · `audience` · `action_chain` ·
-`nudge_text` · `acknowledgment_status` · `escalation_flag`
-
----
-
-## 🧩 Domain Model: Stakeholders × Communication
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    SCHOOL COMMUNICATION ECOSYSTEM                   │
-├───────────────┬───────────────┬──────────────────┬──────────────────┤
-│   STUDENT     │    PARENT     │    TEACHER       │   SECRETARIAT    │
-│               │               │                  │                  │
-│  receives:    │  receives &   │  sends &         │  orchestrates:   │
-│  homework     │  signs forms  │  receives        │  admin notices   │
-│  events       │  stays aware  │  manages class   │  calendar        │
-│  reminders    │  of events    │  communication   │  forms routing   │
-└───────────────┴───────────────┴──────────────────┴──────────────────┘
-        │                │               │                  │
-        └────────────────┴───────────────┴──────────────────┘
-                                     │
-                    ┌────────────────▼────────────────┐
-                    │    AI CLASSIFICATION ENGINE      │
-                    │        (Gemini 2.5 Flash)        │
-                    │                                  │
-                    │  Type:     urgent / info /       │
-                    │            action-required /     │
-                    │            event                 │
-                    │                                  │
-                    │  Audience: student / parent /    │
-                    │            teacher / secretariat │
-                    │                                  │
-                    │  Priority: high / medium / low   │
-                    └────────────────┬────────────────┘
-                                     │
-                    ┌────────────────▼────────────────┐
-                    │        UNIFIED DASHBOARD         │
-                    │                                  │
-                    │  Priority lane · Role view       │
-                    │  Alerts · Calendar · Archive     │
-                    └──────────────────────────────────┘
+```text
+incoming source
+    -> normalized event
+    -> enriched with staff/family context
+    -> AI classification
+    -> stored event record
+    -> dashboard API
 ```
 
 ---
 
-## 🏆 Evaluation Criteria (Judging Grid)
+## 2. What Is In Scope
 
-Every architectural and UX decision must be validated against these 4 criteria:
+This repository contains the runnable and documented hackathon stack:
 
-| Criterion | Jury Question | Our Angle |
-|-----------|---------------|-----------|
-| **Challenge Fit** | Does the solution address the core school comm problem? | School-specific taxonomy, multi-role routing |
-| **Originality** | How creative/innovative is the idea? | Role-aware AI classification for school domain |
-| **Technical Implementation** | How well is it built? | Gemini pipeline + clean role-based UI |
-| **Pitch Performance** | How clearly was it presented? | 3-min narrative: problem → demo → impact |
+- the **n8n-first architecture**,
+- the **WhatsApp bridge** used to forward real messages into n8n,
+- the **manual seed/reset workflows** for a clean demo state,
+- the **published Read API** and **Action API**,
+- the **local API smoke-test script**,
+- the **local copies of all important n8n Code node scripts**,
+- the **local Compose stack for MongoDB, Qdrant, and self-hosted n8n**,
+- the **workflow blueprints** needed to recreate the setup on another n8n instance.
+
+This repository does **not** contain a separate application server anymore.
+
+```text
+old idea
+n8n -> external TypeScript API -> database
+
+final shipped idea
+n8n -> Gemini + MongoDB + Qdrant directly
+```
+
+The old prototype is preserved in [`archive/legacy-typescript-prototype`](/home/kpihx/Work/AI/HiBrown/insight/archive/legacy-typescript-prototype) for provenance only.
 
 ---
 
-## 👥 Team 7
+## 3. Final Architecture
 
-| Name | Institution |
-|------|-------------|
-| Ali | — |
-| Arian | — |
-| Mehryar | — |
-| Tizian | — |
-| Augustin | — |
-| **Ivann (KπX)** | École Polytechnique (l'X) · System Architect |
-| Nina | — |
-
-- **Challenge 2: Clean Communication** · **Floor 3**
-- Guided by Anita & Lucia to the workspace
-
----
-
-## 📦 Deliverables
-
-| # | Deliverable | Format | Constraint | Deadline |
-|---|-------------|--------|------------|----------|
-| 1 | **Report / Abstract** | PDF or Word | 1 page max | Sun Mar 15 · 11:30 AM |
-| 2 | **Technical Solution** | AppScript / Python / repo | Functional implementation | Sun Mar 15 · 11:30 AM |
-| 3 | **Pitch Presentation** | Slides | 3 minutes per team | Sun Mar 15 · 1:00 PM |
-
----
-
-## ⏱️ Sprint Timeline
-
-```
-FRI  Mar 13   ↓ STARTED
-  12:30 PM  Hacking & Mentoring
-   7:00 PM  Dinner
-   7:00 PM+ Late Night Hacking
-
-SAT  Mar 14
-   9:00 AM  Hacking & Mentoring
-  12:00 PM  Lunch
-   4:00 PM  ★ Pitching Workshop — "How to present in 3 min" (Yue Wu)
-   4:30 PM  Hacking & Mentoring
-   7:00 PM+ Late Night Hacking
-
-SUN  Mar 15
-   9:00 AM  Hacking & Pitch Prep
-  11:30 AM  ★★ SUBMISSION DEADLINE ★★
-  12:00 PM  Lunch
-   1:00 PM  Pitches (3 min/team)
-   2:30 PM  Award Ceremony
-   3:30 PM  End
-```
-
----
-
-## 🛠️ Tech Stack
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  n8n (Docker)  — orchestration layer                    │
-│  Triggers: webhook · cron · Gmail · Discord · HTTP      │
-├─────────────────────────────────────────────────────────┤
-│  insight-api (TypeScript / Node 20)  — AI layer         │
-│  POST /classify  GET /dashboard/:role                   │
-│  GET /dead-zones  POST /nudge  GET /morning-brief/:role │
-├─────────────────────────────────────────────────────────┤
-│  Gemini 2.5 Flash  — classification + nudge generation  │
-│  @google/generative-ai SDK                              │
-└─────────────────────────────────────────────────────────┘
-Output: Discord webhook (real delivery, visible in demo)
-Deploy: docker compose up  (n8n + insight-api, one command)
-```
-
-### Source Structure
-
-```
-src/
-  index.ts        ← HTTP API entry point (Express/Hono routes)
-  classifier.ts   ← Gemini classification pipeline
-  config.ts       ← config loader (dotenv + typed settings)
-  types.ts        ← domain types (SchoolEvent, Classification, ...)
-  .env.example    ← secrets template (copy to .env, never commit)
-data/
-  events/         ← 30 synthetic school events (JSON, Gemini-generated)
-    absence/      ← 10 absence_report examples
-    forms/        ← 10 form_deadline examples
-    notices/      ← 10 admin_notice examples
-n8n/
-  workflows/      ← exported n8n workflow JSON (version-controlled)
+```text
+                 ┌────────────────────────────────────────────┐
+                 │                 SOURCES                     │
+                 │ IMAP | WhatsApp bridge | school portal      │
+                 └────────────────────────────────────────────┘
+                                      |
+                                      v
+                 ┌────────────────────────────────────────────┐
+                 │         insight — Ingestion v1.0            │
+                 │ normalize -> context merge -> pre-classify  │
+                 │ Gemini -> parse -> MongoDB -> Qdrant        │
+                 └────────────────────────────────────────────┘
+                                      |
+                         ┌────────────┴────────────┐
+                         v                         v
+            ┌──────────────────────┐   ┌──────────────────────────┐
+            │ MongoDB (nextgen)    │   │ Qdrant (semantic memory) │
+            │ staff/family/events  │   │ insight_school_events    │
+            └──────────────────────┘   └──────────────────────────┘
+                         |
+                         v
+              ┌──────────────────────────────┐
+              │ insight — Read API v1.0      │
+              │ GET /dashboard/brief         │
+              │ GET /dashboard/feed          │
+              │ GET /dashboard/event?id=...  │
+              └──────────────────────────────┘
+                         |
+                         v
+              ┌──────────────────────────────┐
+              │ insight — Action API v1.0    │
+              │ POST /dashboard/action       │
+              └──────────────────────────────┘
 ```
 
 ---
 
-## 🧑‍🏫 Key People
+## 4. Workflow Inventory
 
-**Mentors** (reach via Discord `#ask-a-mentor`):
+### Published workflows
 
-| Mentor | Role | Priority |
-|--------|------|----------|
-| **Katrin Feierling-Sülzle** | Teacher @ Schule Birklehof | ★ Domain expert — consult early |
-| Yue Wu | Founder @ Rocket Tutor | Pitching workshop Sat 4 PM |
-| Hannes Metzger | Innovation Manager @ NXTGN | — |
-| Tobias Lengfeld | Founder @ LivingLines | — |
-| Jakob Seitz | Founder @ LivingLines | — |
-| Lukas Heinzmann | Founder @ gyde | — |
+| Workflow | Purpose | Runtime mode |
+|----------|---------|--------------|
+| `insight — Read API v1.0` | Dashboard read routes | Published / active |
+| `insight — Action API v1.0` | Event actions (`handled`, `archive`) | Published / active |
 
-**Jurors:**
+### Manual workflows
 
-| Juror | Role |
-|-------|------|
-| Pierre-Antoine Amiand-Leroy | Coordinator, Hi! PARIS |
-| Gwendoline De Bie | Engineering Team Manager @ Hi! PARIS |
-| Marc Kirchner | CTO, IPAI Foundation |
-| Helena Dittrich | Organisator BJKM |
-| Johannes Zimmer | Co-Founder @ Linity |
+| Workflow | Purpose | Why manual |
+|----------|---------|------------|
+| `insight — Ingestion v1.0` | Real ingestion pipeline + demo input nodes | Hackathon mode: avoids accidental live writes |
+| `insight — Demo Seed v1.0` | Seed baseline data | Demo preparation only |
+| `insight — Demo Reset v1.0` | Clear baseline data | Demo preparation only |
+| `insight — Demo Viewer v1.0` | Manual smoke-test runner against published API | Internal QA helper, not a public route |
+
+Full workflow blueprints live in [`n8n/workflows/`](/home/kpihx/Work/AI/HiBrown/insight/n8n/workflows).
 
 ---
 
-## 🚀 Quickstart
+## 5. Repository Layout
+
+```text
+insight/
+├── README.md
+├── CHANGELOG.md
+├── TODO.md
+├── docker-compose.yml
+├── .env.n8n.example
+├── wa-bridge.js
+├── scripts/
+│   ├── api_smoke_test.sh
+│   └── local_deploy_runbook.sh
+├── n8n/
+│   ├── README.md
+│   ├── architecture.md
+│   ├── api.md
+│   ├── schema_db.md
+│   ├── internal.md
+│   ├── source.md
+│   ├── workflows/
+│   ├── nodes/
+│   ├── fixtures/
+│   └── data/
+└── archive/
+    ├── legacy-typescript-prototype/
+    └── hackathon-pitch-assets/
+```
+
+---
+
+## 6. Runtime Components
+
+### 6.1 n8n
+
+The primary runtime used during the hackathon is an online n8n instance:
+
+```text
+https://nextgen-n8n.westeurope.cloudapp.azure.com
+```
+
+That instance hosts the working workflows and is the reference state reflected in this repository.
+
+### 6.2 MongoDB
+
+Canonical database name:
+
+```text
+nextgen
+```
+
+Collections:
+
+- `staff_directory`
+- `family_directory`
+- `school_events`
+
+### 6.3 Qdrant
+
+Canonical collection:
+
+```text
+insight_school_events
+```
+
+This branch is intentionally future-facing: it stores semantic event documents for a later chatbot or retrieval-based assistant.
+
+### 6.4 WhatsApp bridge
+
+The repository includes [`wa-bridge.js`](/home/kpihx/Work/AI/HiBrown/insight/wa-bridge.js), which uses Baileys and **phone pairing code mode**, not QR mode.
+
+```text
+bridge start
+   -> request pairing code
+   -> phone: Linked Devices
+   -> enter code
+   -> forward text messages to n8n webhook
+```
+
+The bridge stores session state in `wa-auth/`, which is **runtime-only** and intentionally ignored by Git.
+
+### 6.5 Local self-hosting footprint
+
+The repository ships a minimal local stack:
+
+```text
+docker compose up -d
+  -> MongoDB
+  -> Qdrant
+  -> n8n
+```
+
+This does **not** recreate the cloud instance automatically. It gives you the runtime services so that you can rebuild the workflows locally from the blueprints and node sources stored in this repository.
+
+---
+
+## 7. Demo Operating Procedure
+
+### 7.1 Reset demo state
+
+In n8n:
+
+```text
+insight — Demo Reset v1.0
+-> run "Reset demo data"
+```
+
+### 7.2 Seed demo state
+
+In n8n:
+
+```text
+insight — Demo Seed v1.0
+-> run "Seed Demo Data"
+```
+
+The seed is idempotent:
+
+- `staff_directory` uses `staff_id`
+- `family_directory` uses `family_id`
+- `school_events` uses `original_id`
+
+### 7.3 Test the published API locally
+
+Run:
 
 ```bash
-# Install dependencies
-npm install
-
-# Set up your Gemini API key
-cp src/.env.example src/.env
-# → edit src/.env and fill in GEMINI_API_KEY
-
-# Run classification smoke-test (dev mode, no compile step)
-npm run dev
-
-# Type-check only
-npm run typecheck
+cd /home/kpihx/Work/AI/HiBrown/insight
+./scripts/api_smoke_test.sh
 ```
 
-See `TODO.md` for the active sprint backlog and architectural decisions pending.
+Expected result:
+
+```text
+Passed: 9
+Failed: 0
+```
+
+### 7.4 Manual curl examples
+
+```bash
+curl -sS 'https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook/dashboard/brief?role=teacher&staff_id=staff_1' | jq
+curl -sS 'https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook/dashboard/feed?role=teacher&staff_id=staff_1' | jq
+curl -sS 'https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook/dashboard/event?id=SEED-EVENT-0001' | jq
+curl -sS -X POST 'https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook/dashboard/action' \
+  -H 'Content-Type: application/json' \
+  -d '{"event_id":"SEED-EVENT-0001","action":"handled","actor_id":"staff_1","note":"Handled during demo"}' | jq
+```
+
+---
+
+## 8. Local Redeploy on Your Own n8n
+
+The project can be recreated on another n8n instance without guessing, but there are a few moving parts to map explicitly.
+
+### 8.1 Start local services
+
+```bash
+cp .env.n8n.example .env.n8n
+docker compose up -d
+```
+
+The local stack starts:
+
+- `mongo`
+- `qdrant`
+- `n8n`
+
+### 8.2 Create credentials in n8n
+
+Create these credentials manually in the n8n UI:
+
+1. `MongoDB`
+   - connection string should target the local service:
+   ```text
+   mongodb://mongo:27017
+   ```
+   - database:
+   ```text
+   nextgen
+   ```
+
+2. `Google Gemini(PaLM) Api account`
+   - host:
+   ```text
+   https://generativelanguage.googleapis.com
+   ```
+   - your Gemini API key
+
+3. `QdrantApi account`
+   - for the bundled local stack:
+   ```text
+   http://qdrant:6333
+   ```
+   - no API key is required for the default local container
+
+4. `IMAP account`
+   - optional, only if you want the real IMAP trigger
+
+### 8.3 Import or rebuild workflows
+
+Use the blueprints in:
+
+- [`n8n/workflows/`](/home/kpihx/Work/AI/HiBrown/insight/n8n/workflows)
+- [`n8n/nodes/`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes)
+
+The repository stores the important Code node scripts locally so that each workflow can be recreated without reverse-engineering the online instance.
+
+### 8.4 Configure the bridge
+
+Copy and edit:
+
+```bash
+cp .env.n8n.example .env.n8n
+```
+
+Then set:
+
+- `N8N_TARGET=local`
+- `WEBHOOK_URL_LOCAL=http://localhost:5678`
+- `N8N_WA_MODE=production` or `test`
+- `WA_PHONE=<your phone>`
+
+Start the bridge:
+
+```bash
+npm install
+npm run start:wa-bridge
+```
+
+### 8.5 Seed and test
+
+In local n8n:
+
+```text
+Run "Reset demo data"
+Run "Seed Demo Data"
+```
+
+Then:
+
+```bash
+./scripts/api_smoke_test.sh
+```
+
+---
+
+## 9. Documentation Map
+
+| File | Role |
+|------|------|
+| [`n8n/README.md`](/home/kpihx/Work/AI/HiBrown/insight/n8n/README.md) | n8n-focused entry point |
+| [`n8n/architecture.md`](/home/kpihx/Work/AI/HiBrown/insight/n8n/architecture.md) | end-to-end pipeline map |
+| [`n8n/api.md`](/home/kpihx/Work/AI/HiBrown/insight/n8n/api.md) | published API contract |
+| [`n8n/schema_db.md`](/home/kpihx/Work/AI/HiBrown/insight/n8n/schema_db.md) | MongoDB schema |
+| [`n8n/source.md`](/home/kpihx/Work/AI/HiBrown/insight/n8n/source.md) | connectors, demo inputs, WhatsApp specifics |
+| [`n8n/internal.md`](/home/kpihx/Work/AI/HiBrown/insight/n8n/internal.md) | workflow inventory and operational notes |
+
+---
+
+## 10. Security and Git Hygiene
+
+Ignored from Git:
+
+- `.agent/`
+- `wa-auth/`
+- `.env`
+- `.env.n8n`
+- local n8n and MongoDB volumes
+
+That keeps the repository publishable without shipping collaboration traces, secrets, or WhatsApp session state.
+
+---
+
+## 11. Current Status
+
+The current validated state is:
+
+```text
+Reset -> Seed -> Read API -> Action API -> Read again
+```
+
+with:
+
+```text
+API smoke test
+Passed: 9
+Failed: 0
+```
+
+That is the baseline intended for the GitHub handoff.

@@ -1,17 +1,20 @@
 node_modules/
 dist/
 
-# Secrets — NEVER commit
+# Secrets
 .env
 .env.n8n
 
-# n8n local data (workflows exportés séparément dans n8n/workflows/)
+# Local collaboration traces
+.agent/
+
+# Runtime state
+wa-auth/
 n8n-data/
+mongo-data/
 
-# OS
+# Editor / OS
 .DS_Store
-
-# Editor
-.vscode/
 .idea/
+.vscode/
 *.swp

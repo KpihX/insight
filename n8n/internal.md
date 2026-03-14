@@ -1,148 +1,79 @@
-# insight — Internal Layer
+# insight — Internal Workflow Notes
 
-> Internal processing from canonical event to database storage.
+## Workflow IDs
 
-```text
-                        INTERNAL PIPELINE
+| Workflow | ID |
+|----------|----|
+| `insight — Ingestion v1.0` | `yBh4AiGZZCMmHTIg` |
+| `insight — Read API v1.0` | `VzhY7mO07ROlNdpn` |
+| `insight — Action API v1.0` | `CKI31nMRYztA59at` |
+| `insight — Demo Seed v1.0` | `YYGMK0Nrstykk4Ok` |
+| `insight — Demo Reset v1.0` | `t1Bk12b6l6zRuLot` |
+| `insight — Demo Viewer v1.0` | `Jjx9BfZZS6uCH5kk` |
 
-   +------------------------------+
-    | SchoolEvent                  |
-    | (Normalized JSON)            |
-   +------------------------------+
-                  |
-                  v
-    +-----------------------------------------------+
-      | Pre-classifier                                |
-      | - match sender / receivers                    |
-      | - use internal staff directory                |
-      | - use family directory                        |
-      | - add sender_group                            |
-      | - resolve receivers                           |
-    +-----------------------------------------------+
-                  |
-                  v
-     +-----------------------------------------------+
-     | Classifier (LLM)                              |
-     | - classify category                           |
-     | - classify urgent                             |
-     | - classify important                          |
-     | - set action_required                         |
-     | - generate summary                            |
-     | - v1.1+ optional: read a lightweight memory note |
-     +-----------------------------------------------+
-                  |
-                  v
-   +-----------------------------------------------+
-   | Database                                      |
-   | - school_events                              |
-   | - staff_directory                            |
-   | - family_directory                           |
-   +-----------------------------------------------+
-```
+## Important runtime conventions
 
-```text
-Directories used by the internal layer
---------------------------------------
-  - staff_directory   : teachers / admin / aliases
-  - family_directory  : parent contacts / student references / aliases
+### Manual-only workflows
 
-Population mode
----------------
-- real school : sync from webhook / school system
-- demo        : pre-filled manually
-```
+These stay manual in hackathon mode:
 
-## Input From Source Layer — SchoolEvent
+- `insight — Ingestion v1.0`
+- `insight — Demo Seed v1.0`
+- `insight — Demo Reset v1.0`
+- `insight — Demo Viewer v1.0`
 
-See `source.md` for the canonical `SchoolEvent` definition.
+### Published workflows
+
+- `insight — Read API v1.0`
+- `insight — Action API v1.0`
+
+## Local source mapping
+
+Inline workflow logic is now mirrored under [`nodes/`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes):
+
+- [`nodes/ingestion/pack-staff-directory.js`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes/ingestion/pack-staff-directory.js)
+- [`nodes/ingestion/pack-family-directory.js`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes/ingestion/pack-family-directory.js)
+- [`nodes/ingestion/email-json-record.js`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes/ingestion/email-json-record.js)
+- [`nodes/ingestion/msg-json-record.js`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes/ingestion/msg-json-record.js)
+- [`nodes/demo-seed/school-events-seed.js`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes/demo-seed/school-events-seed.js)
+- [`nodes/vector/default-data-loader-document.js`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes/vector/default-data-loader-document.js)
+
+### Default Data Loader document payload
+
+The Qdrant branch loads one text document shaped like:
 
 ```text
-Rule
-----
-At least one sender field must be present.
-`receivers` should be present when available.
-Aliases must be supported for school members.
+School event
+Category: <category>
+Summary: <summary>
+Content: <content>
+Sender group: <sender_group>
+Sender: <sender_name>
+Source: <source_system> / <source_channel>
+Receivers: <comma-separated receivers>
+Timestamp: <timestamp>
 ```
 
-## Output Of Pre-classifier
+with metadata:
 
-`SchoolEventPreclassified`
+- `event_id`
+- `sender_group`
+- `category`
+- `source_system`
+- `source_channel`
+- `urgent`
+- `important`
+- `action_required`
+- `receivers`
+- `timestamp`
 
-```json
-{
-  "source_system": "imap | whatsapp | school_portal",
-  "source_channel": "mailbox | group_messaging | webhook",
-  "sender_name": "string | null",
-  "sender_contact": "string | null",
-  "receivers": [
-    "teacher_42",
-    "teacher_51",
-    "admin_7"
-  ],
-  "subject": "string | null",
-  "content": "string",
-  "timestamp": "ISO-8601 string",
-  "original_id": "string",
-  "sender_group": "parent | teacher | admin | external | unknown",
-  "received_at": "ISO-8601 string"
-}
-```
+## Seed baseline events
 
-```text
-Pre-classifier role
--------------------
-- resolve raw receiver references
-- expand aliases such as `*`, `teachers`, `admin`
-- map emails / messaging identifiers to internal identities
-- rewrite `receivers` into resolved internal targets
-```
+The baseline seeded events are:
 
-## Output Of Classifier
-
-`SchoolEventClassified`
-
-```json
-{
-  "source_system": "imap | whatsapp | school_portal",
-  "source_channel": "mailbox | group_messaging | webhook",
-  "sender_name": "string | null",
-  "sender_contact": "string | null",
-  "receivers": [
-    "teacher_42",
-    "teacher_51",
-    "admin_7"
-  ],
-  "subject": "string | null",
-  "content": "string",
-  "timestamp": "ISO-8601 string",
-  "original_id": "string",
-  "sender_group": "parent | teacher | admin | external | unknown",
-  "category": "absence_report | action_request | deadline_or_form | administrative_notice | schedule_change | general",
-  "urgent": true,
-  "important": true,
-  "action_required": true,
-  "summary": "short operational summary",
-  "received_at": "ISO-8601 string",
-  "classified_at": "ISO-8601 string"
-}
-```
-
-```text
-Classifier note
----------------
-The LLM works on top of the resolved `receivers` field.
-It classifies the event and may refine the operational interpretation,
-but receiver resolution belongs to the pre-classifier.
-The lightweight memory note is an optional future extension, not a V1 dependency.
-
-Why LLM in V1
--------------
-- no stable labeled dataset to train a dedicated model
-- school communication patterns evolve too quickly
-- a fixed trained model would require frequent retraining
-- an LLM gives faster adaptation for a changing domain
-```
-
-## Keywords
-
-`pre-classifier` `staff directory` `family directory` `sender_group` `receivers` `receiver resolution` `category` `urgent` `important` `db storage`
+1. `SEED-EVENT-0001`
+   - parent absence report from Jane Doe about Tim Doe
+2. `SEED-EVENT-0002`
+   - teacher schedule change from Sarah Lee
+3. `SEED-EVENT-0003`
+   - admin reminder from David Brown

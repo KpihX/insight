@@ -1,50 +1,46 @@
 # insight — Demo Data
 
-> Lightweight demo datasets for seeding MongoDB and testing the pipeline.
+## Raw files
 
----
+### `raw/contact_list.json`
 
-## Structure
+Original synthetic contact dataset received during the hackathon.
+
+### `raw/email_100_records.json`
+
+Original synthetic email dataset received during the hackathon.
+
+These files are preserved as raw provenance.
+
+## Canonical demo seeds
+
+### `seed/staff_directory.json`
+
+Operational seed for `staff_directory`.
+
+### `seed/family_directory.json`
+
+Operational seed for `family_directory`.
+
+Important design decision:
 
 ```text
-n8n/data/
-├── raw/
-│   ├── contact_list.json
-│   └── email_100_records.json
-└── seed/
-    ├── staff_directory.json
-    └── family_directory.json
+every parent in the demo seed has at least one child
 ```
 
----
+That keeps the school data model coherent for demos and API tests.
 
-## Meaning
+## Seeding rule
 
-```text
-raw/contact_list.json
-- original mixed contact dataset from the team
-- contains teacher, admin, and parent contacts
+The live demo baseline is defined by:
 
-raw/email_100_records.json
-- original fake email dataset
-- useful for mailbox tests and synthetic event ingestion
+- these local seed JSON files,
+- plus the inline `school_events_seed` records inside `insight — Demo Seed v1.0`.
 
-seed/staff_directory.json
-- cleaned Mongo-ready seed for staff_directory
-- derived from raw/contact_list.json
-- keeps only teacher and admin rows
-
-seed/family_directory.json
-- cleaned Mongo-ready seed for family_directory
-- derived from raw/contact_list.json
-- keeps only parent rows
-```
-
----
-
-## Demo Seeding Rule
+The seed workflow is idempotent and uses business keys:
 
 ```text
-Use files in seed/ to populate MongoDB collections.
-Use files in raw/ only as source material or future import inputs.
+staff_directory  -> staff_id
+family_directory -> family_id
+school_events    -> original_id
 ```

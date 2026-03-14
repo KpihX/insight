@@ -1,10 +1,13 @@
 {
   "name": "insight",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "HiBrown Hackathon 2026 — Team 7 — Challenge 2: Clean Communication (School Hub)",
   "type": "module",
   "scripts": {
-    "start": "node wa-bridge.js"
+    "start": "node wa-bridge.js",
+    "start:wa-bridge": "node wa-bridge.js",
+    "smoke:api": "./scripts/api_smoke_test.sh",
+    "deploy:local": "./scripts/local_deploy_runbook.sh"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
