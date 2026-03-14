@@ -1,0 +1,21 @@
+{
+  "name": "insight-backend",
+  "version": "1.0.0",
+  "description": "n8n-first backend for the insight school communication hub",
+  "type": "module",
+  "scripts": {
+    "start": "node wa-bridge.js",
+    "start:wa-bridge": "node wa-bridge.js",
+    "smoke:api": "./scripts/api_smoke_test.sh",
+    "deploy:local": "./scripts/local_deploy_runbook.sh"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.21",
+    "dotenv": "^16.4.0",
+    "pino": "^10.3.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

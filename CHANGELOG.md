@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## [1.2.0] - 2026-03-14
+- [x] Added a dedicated frontend runtime config so live/mock API mode, backend base URL, polling interval, and demo calendar focus can be changed without code spelunking. [ARCHIVE]
+- [x] Aligned the imported frontend with the explicit backend `assist.calendar_patch` contract in both types and UI flows. [ARCHIVE]
+- [x] Reworked the calendar handoff so Inbox and Home can open the static timetable around the backend-provided meeting event instead of relying on text heuristics. [ARCHIVE]
+- [x] Made the Home and Tasks wellbeing widgets dynamic from fetched workload, urgent items, and deadline pressure. [ARCHIVE]
+- [x] Preserved a deliberately different static mock mode when `USE_REAL_API=false` so reviewers can visually distinguish mock data from the live Sarah Lee demo. [ARCHIVE]
+
+## [1.1.0] - 2026-03-14
+- [x] Restructured the repository into a clean monorepo layout with `frontend/` and `backend/` as first-class directories. [ARCHIVE]
+- [x] Imported the local frontend codebase into `frontend/` and documented its current screens, API wiring, and demo posture. [ARCHIVE]
+- [x] Moved the WhatsApp bridge runtime and auth state under `backend/` so the backend concerns live together. [ARCHIVE]
+- [x] Removed temporary handoff clutter from the root, including `insight.zip` and the stale root `node_modules/`. [ARCHIVE]
+- [x] Rewrote the repository documentation into three layers: root overview, frontend README, and backend README. [ARCHIVE]
+- [x] Realigned the backend n8n documentation after the monorepo move so all internal links point to the new `backend/n8n/` structure. [ARCHIVE]
+- [x] Kept the published API contract explicit, including `assist.calendar_patch`, so the frontend does not need to infer timetable behavior heuristically. [ARCHIVE]
+
 ## [1.0.0] - 2026-03-14
 - [x] Repository refactor for GitHub handoff: removed the outdated TypeScript-first narrative from the main docs and realigned the project around the shipped n8n-first architecture. [ARCHIVE]
 - [x] Archived the original hackathon pitch assets under `archive/hackathon-pitch-assets/` to keep the runtime repository focused on the product. [ARCHIVE]
@@ -13,7 +29,7 @@
 
 ## [0.4.0] - 2026-03-13
 - [x] Architecture pivot: n8n-first. All AI logic lives in n8n Code nodes. No external application server remains in the runtime path. [ARCHIVE]
-- [x] Simplified `package.json` so the local Node runtime only serves the WhatsApp bridge. [ARCHIVE]
+- [x] Simplified the backend runtime so the local Node process only serves the WhatsApp bridge. [ARCHIVE]
 - [x] Added version-controlled n8n fixtures and initial local Code node exports. [ARCHIVE]
 - [x] Added the first WhatsApp-to-n8n bridge based on Baileys pairing flow. [ARCHIVE]
 
