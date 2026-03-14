@@ -12,8 +12,7 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Keep this disabled when requested so agent edits do not cause UI flicker.
+      // Keep this toggle available so local agent edits do not cause UI flicker when requested.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };

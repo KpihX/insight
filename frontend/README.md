@@ -6,10 +6,10 @@ It is the interface that reviewers can see, while the n8n-first operational back
 
 - [backend/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/README.md)
 
-The current public prototype is visible here:
+This repository now carries the local frontend source directly.
 
 ```text
-https://ai.studio/apps/73b2468e-784e-4860-ace1-e8bedf93a0b0?fullscreenApplet=true
+frontend/ = the current UI source of truth
 ```
 
 ## What the frontend is
@@ -162,10 +162,22 @@ cd frontend
 npm install
 ```
 
+Copy the runtime template:
+
+```bash
+cp .env.example .env
+```
+
 Run the dev server:
 
 ```bash
 npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
 ```
 
 Build:
@@ -178,6 +190,12 @@ Type-check:
 
 ```bash
 npm run lint
+```
+
+Run the full local validation loop:
+
+```bash
+npm run check
 ```
 
 ## Environment
@@ -207,6 +225,44 @@ Design rule:
 ```text
 real mode -> Sarah Lee / live backend
 mock mode -> distinct static prototype data
+```
+
+## Vercel-ready deployment
+
+The frontend is now configured so deployment to Vercel is straightforward:
+
+```text
+- Vite app
+- all runtime switches exposed through VITE_*
+- SPA rewrite handled by vercel.json
+```
+
+Relevant files:
+
+- [package.json](/home/kpihx/Work/AI/HiBrown/insight/frontend/package.json)
+- [vite.config.ts](/home/kpihx/Work/AI/HiBrown/insight/frontend/vite.config.ts)
+- [vercel.json](/home/kpihx/Work/AI/HiBrown/insight/frontend/vercel.json)
+- [.env.example](/home/kpihx/Work/AI/HiBrown/insight/frontend/.env.example)
+
+Recommended Vercel setup:
+
+```text
+Framework preset: Vite
+Root directory: frontend
+Build command: npm run build
+Output directory: dist
+Install command: npm install
+```
+
+Required environment variables on Vercel:
+
+```text
+VITE_USE_REAL_API=true
+VITE_API_BASE_URL=https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook
+VITE_DASHBOARD_ROLE=teacher
+VITE_DASHBOARD_STAFF_ID=staff_1
+VITE_REFRESH_INTERVAL_MS=15000
+VITE_DEMO_CALENDAR_WEEK_START=2026-03-16
 ```
 
 ## Demo scenarios currently targeted

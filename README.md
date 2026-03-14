@@ -9,11 +9,7 @@ frontend/ -> the visible teacher-facing product surface
 backend/  -> the n8n-first ingestion, storage, and API layer
 ```
 
-The current visible frontend prototype is available here:
-
-```text
-https://ai.studio/apps/73b2468e-784e-4860-ace1-e8bedf93a0b0?fullscreenApplet=true
-```
+The current frontend source of truth lives directly in this repository under `frontend/`.
 
 That split is intentional:
 

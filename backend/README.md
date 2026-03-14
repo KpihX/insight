@@ -13,15 +13,9 @@ incoming source
     -> dashboard APIs
 ```
 
-The visible frontend prototype that consumes this backend is documented separately:
+The visible frontend that consumes this backend is documented separately:
 
 - [frontend/README.md](/home/kpihx/Work/AI/HiBrown/insight/frontend/README.md)
-
-The live frontend demo currently visible to reviewers is:
-
-```text
-https://ai.studio/apps/73b2468e-784e-4860-ace1-e8bedf93a0b0?fullscreenApplet=true
-```
 
 ## What lives here
 
@@ -34,9 +28,7 @@ backend/
 ├── wa-bridge.js
 ├── wa-auth/                  # runtime state, Git-ignored
 ├── scripts/
-├── n8n/
-├── CHANGELOG.md
-└── TODO.md
+└── n8n/
 ```
 
 ## Runtime split
