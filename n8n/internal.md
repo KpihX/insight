@@ -9,7 +9,6 @@
 | `insight — Action API v1.0` | `CKI31nMRYztA59at` |
 | `insight — Demo Seed v1.0` | `YYGMK0Nrstykk4Ok` |
 | `insight — Demo Reset v1.0` | `t1Bk12b6l6zRuLot` |
-| `insight — Demo Viewer v1.0` | `Jjx9BfZZS6uCH5kk` |
 
 ## Important runtime conventions
 
@@ -20,7 +19,6 @@ These stay manual in hackathon mode:
 - `insight — Ingestion v1.0`
 - `insight — Demo Seed v1.0`
 - `insight — Demo Reset v1.0`
-- `insight — Demo Viewer v1.0`
 
 ### Published workflows
 

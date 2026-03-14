@@ -18,7 +18,6 @@ clone repository
 nodes/
 ├── action-api/
 ├── demo-seed/
-├── demo-viewer/
 ├── ingestion/
 ├── read-api/
 ├── vector/
@@ -28,7 +27,6 @@ nodes/
 ## Notes
 
 - `action-api/`, `ingestion/`, and `read-api/` contain the shipped logic.
-- `demo-viewer/` contains the manual smoke-test runner used during final validation.
 - `demo-seed/` contains the inline baseline event payloads that are seeded into MongoDB.
 - `vector/` documents the `Default Data Loader` payload used before Qdrant insertion.
 - `legacy/` preserves superseded logic for provenance only.

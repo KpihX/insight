@@ -23,6 +23,5 @@ https://nextgen-n8n.westeurope.cloudapp.azure.com
 | `insight — Action API v1.0` | `CKI31nMRYztA59at` | published |
 | `insight — Demo Seed v1.0` | `YYGMK0Nrstykk4Ok` | manual |
 | `insight — Demo Reset v1.0` | `t1Bk12b6l6zRuLot` | manual |
-| `insight — Demo Viewer v1.0` | `Jjx9BfZZS6uCH5kk` | manual |
 
 Use the matching markdown blueprint in this directory together with the local Code node files under [`n8n/nodes/`](/home/kpihx/Work/AI/HiBrown/insight/n8n/nodes).

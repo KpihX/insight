@@ -2,7 +2,25 @@
 
 > **0 Trust — 100% Control | 0 Magic — 100% Transparency | 0 Hardcoding — 100% Flexibility**
 
-`insight` is a lightweight school communication operating layer built during the Hi! PARIS × IPAI hackathon in March 2026. The project does not try to replace every school channel. It sits above them, converts incoming communication into a shared event model, classifies each event with Gemini, stores the result in MongoDB, and exposes a small dashboard API for a future frontend.
+`insight` is the **backend** of our hackathon project, built during the Hi! PARIS × IPAI hackathon in March 2026.
+
+The visible frontend prototype can be explored here:
+
+```text
+https://ai.studio/apps/73b2468e-784e-4860-ace1-e8bedf93a0b0?fullscreenApplet=true
+```
+
+The split is intentional:
+
+```text
+visible product surface
+-> frontend prototype
+
+operational ingestion + storage + API layer
+-> insight backend
+```
+
+`insight` does not try to replace every school channel. It sits above them, converts incoming communication into a shared event model, classifies each event with Gemini, stores the result in MongoDB, and exposes the backend APIs consumed by the frontend layer.
 
 ---
 
@@ -54,6 +72,8 @@ This repository contains the runnable and documented hackathon stack:
 - the **workflow blueprints** needed to recreate the setup on another n8n instance.
 
 This repository does **not** contain a separate application server anymore.
+
+It also does **not** contain the final visible frontend itself. That frontend exists as a separate artifact and uses the backend exposed here.
 
 ```text
 old idea
@@ -122,7 +142,6 @@ The old prototype is preserved in [`archive/legacy-typescript-prototype`](/home/
 | `insight — Ingestion v1.0` | Real ingestion pipeline + demo input nodes | Hackathon mode: avoids accidental live writes |
 | `insight — Demo Seed v1.0` | Seed baseline data | Demo preparation only |
 | `insight — Demo Reset v1.0` | Clear baseline data | Demo preparation only |
-| `insight — Demo Viewer v1.0` | Manual smoke-test runner against published API | Internal QA helper, not a public route |
 
 Full workflow blueprints live in [`n8n/workflows/`](/home/kpihx/Work/AI/HiBrown/insight/n8n/workflows).
 
@@ -393,6 +412,8 @@ Then:
 Ignored from Git:
 
 - `.agent/`
+- `CLAUDE.md`
+- `GEMINI.md`
 - `wa-auth/`
 - `.env`
 - `.env.n8n`
@@ -419,3 +440,13 @@ Failed: 0
 ```
 
 That is the baseline intended for the GitHub handoff.
+
+Keep the product boundary explicit in any presentation or README excerpt:
+
+```text
+visible frontend prototype
+-> https://ai.studio/apps/73b2468e-784e-4860-ace1-e8bedf93a0b0?fullscreenApplet=true
+
+this repository
+-> insight backend
+```

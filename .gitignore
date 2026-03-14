@@ -7,6 +7,8 @@ dist/
 
 # Local collaboration traces
 .agent/
+CLAUDE.md
+GEMINI.md
 
 # Runtime state
 wa-auth/

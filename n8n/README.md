@@ -30,7 +30,6 @@ Manual
 - insight — Ingestion v1.0
 - insight — Demo Seed v1.0
 - insight — Demo Reset v1.0
-- insight — Demo Viewer v1.0
 ```
 
 ## Directory map
