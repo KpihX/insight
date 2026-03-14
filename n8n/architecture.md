@@ -18,7 +18,7 @@
              pre-classify
                     |
                     v
-       Google Gemini (message a model)
+       model message node
                     |
                     v
         Parse Classified Event
@@ -26,7 +26,7 @@
            v                v
    MongoDB school_events   Qdrant Vector Store
                                 ^
-                                |-- Embeddings Google Gemini
+                                |-- embeddings node
                                 |-- Default Data Loader
 ```
 

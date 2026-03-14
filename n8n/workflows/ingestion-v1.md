@@ -4,7 +4,7 @@ Workflow ID: `yBh4AiGZZCMmHTIg`
 
 ## Purpose
 
-Normalize incoming school communication, enrich it with directory context, classify it with Gemini, persist it to MongoDB, and index it in Qdrant.
+Normalize incoming school communication, enrich it with directory context, classify it with a model, persist it to MongoDB, and index it in Qdrant.
 
 ## Topology
 
@@ -15,11 +15,11 @@ School Portal Trigger ---/                                                      
 Manual demo inputs --------------------------------------------------------------/
 
 pre-classify
-  -> Message a model (Gemini 2.5 Flash)
+  -> Message a model
   -> Parse Classified Event
   -> MongoDB Save
   -> Qdrant Vector Store
-       ^ Embeddings Google Gemini
+       ^ embeddings node
        ^ Default Data Loader
 ```
 

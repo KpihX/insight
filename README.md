@@ -20,7 +20,7 @@ operational ingestion + storage + API layer
 -> insight backend
 ```
 
-`insight` does not try to replace every school channel. It sits above them, converts incoming communication into a shared event model, classifies each event with Gemini, stores the result in MongoDB, and exposes the backend APIs consumed by the frontend layer.
+`insight` does not try to replace every school channel. It sits above them, converts incoming communication into a shared event model, classifies each event with an LLM, stores the result in MongoDB, and exposes the backend APIs consumed by the frontend layer.
 
 ---
 
@@ -80,7 +80,7 @@ old idea
 n8n -> external TypeScript API -> database
 
 final shipped idea
-n8n -> Gemini + MongoDB + Qdrant directly
+n8n -> model + MongoDB + Qdrant directly
 ```
 
 The old prototype is preserved in [`archive/legacy-typescript-prototype`](/home/kpihx/Work/AI/HiBrown/insight/archive/legacy-typescript-prototype) for provenance only.
@@ -99,7 +99,7 @@ The old prototype is preserved in [`archive/legacy-typescript-prototype`](/home/
                  ┌────────────────────────────────────────────┐
                  │         insight — Ingestion v1.0            │
                  │ normalize -> context merge -> pre-classify  │
-                 │ Gemini -> parse -> MongoDB -> Qdrant        │
+                 │ model -> parse -> MongoDB -> Qdrant         │
                  └────────────────────────────────────────────┘
                                       |
                          ┌────────────┴────────────┐
@@ -329,12 +329,12 @@ Create these credentials manually in the n8n UI:
    nextgen
    ```
 
-2. `Google Gemini(PaLM) Api account`
+2. `Google AI model credential`
    - host:
    ```text
    https://generativelanguage.googleapis.com
    ```
-   - your Gemini API key
+   - your model API key
 
 3. `QdrantApi account`
    - for the bundled local stack:
@@ -412,8 +412,7 @@ Then:
 Ignored from Git:
 
 - `.agent/`
-- `CLAUDE.md`
-- `GEMINI.md`
+- local agent symlink files
 - `wa-auth/`
 - `.env`
 - `.env.n8n`

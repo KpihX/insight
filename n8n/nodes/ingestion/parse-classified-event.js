@@ -1,8 +1,8 @@
 /**
  * Parse Classified Event
  *
- * n8n Code node placed after the Google Gemini "Message a model" node.
- * It extracts the structured JSON payload returned by Gemini, merges it
+ * n8n Code node placed after the "Message a model" node.
+ * It extracts the structured JSON payload returned by the model, merges it
  * with the pre-classified school event, and emits the final record shape
  * stored in MongoDB.
  */
