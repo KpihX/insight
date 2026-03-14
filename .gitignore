@@ -3,6 +3,10 @@ dist/
 
 # Secrets — NEVER commit
 .env
+.env.n8n
+
+# n8n local data (workflows exportés séparément dans n8n/workflows/)
+n8n-data/
 
 # OS
 .DS_Store

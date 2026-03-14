@@ -1,0 +1,13 @@
+{
+  "source_system": "whatsapp",
+  "source_channel": "group_messaging",
+  "sender_name": "Nina Fischer",
+  "sender_contact": "4917612345678",
+  "receivers": [
+    "120363999999999999@g.us"
+  ],
+  "subject": null,
+  "content": "Good morning, Emma Fischer from class 6A is sick and will miss school today.",
+  "timestamp": "2026-03-13T08:10:00.000Z",
+  "original_id": "3EB0C4A9F23B1D7E8A90"
+}

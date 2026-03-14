@@ -109,16 +109,53 @@ Build an event-driven school communication orchestrator: operational events trig
 - **SAT Mar 14** — 9 AM: Hacking · **4 PM: Pitching Workshop (Yue Wu)** · 7 PM+: Late Night Hacking
 - **SUN Mar 15** — 9 AM: Hacking & Pitch Prep · **11:30 AM: ★ SUBMISSION** · 1 PM: Pitches · 2:30 PM: Award
 
-### 7. Tech Stack [CLAUDE]
-- **Orchestration:** n8n (Docker) — handles all I/O: webhook triggers, cron, Gmail, Discord, HTTP nodes
-- **AI Layer:** TypeScript (Node.js 20+, ESM) exposed as HTTP API — Gemini 2.5 Flash for classification + nudge generation
-- **Package manager:** `npm` · `tsx` for dev execution
-- **Deployment:** Docker Compose (`n8n` + `insight-api`) — shared instance, one command
-- **Simulation:** webhook POST to n8n triggers live event during demo
-- **Notification output:** Discord webhook (real delivery, visible to judges)
-- **Dataset:** 30 synthetic JSON events (Gemini-generated, 3 trigger types × 10)
-- **Source structure:** `src/types.ts` · `src/config.ts` · `src/classifier.ts` · `src/index.ts`
+### 7. Tech Stack [CLAUDE] — updated v0.4.0
+- **Orchestration:** n8n (Azure instance) — all logic in JS Code nodes. No external API server.
+  - Instance: `nextgen-n8n.westeurope.cloudapp.azure.com` · Workflow ID: `yBh4AiGZZCMmHTIg`
+- **WhatsApp bridge:** `wa-bridge.js` (Baileys) — POSTs incoming messages to n8n webhook
+- **AI Layer:** Gemini 2.0 Flash — classification inside n8n Code node `gemini-classify.js`
+- **Database:** MongoDB (Azure Cosmos DB) — stores all classified SchoolEvents for dashboard consumption
+  - Secret `MONGODB_URI` — inject via `.env.n8n` / `.env` (NEVER commit the URI)
+- **Package manager:** `npm` (wa-bridge.js only, no TypeScript)
+- **Deployment:** Docker Compose (`n8n` only — `docker compose up`)
+- **Simulation:** webhook POST to n8n with synthetic JSON events
+- **Notification output:** Discord webhook (urgent alerts only)
+- **Dataset:** 30 synthetic JSON events (Gemini-generated, 3 trigger types × 10) — `data/events/`
 - **Deliverable format:** GitHub repo link
+
+### 9. Shared Team Drive [CLAUDE]
+- **Provider:** Google Drive — `kapoivha@gmail.com`
+- **Folder:** `Hi-Paris_IPAI_Hackathlon` (ID: `1aH8yIasxY_XFBczPXEUy5JnGobh4mQZq`)
+- **Local GVFS mount:** `/run/user/1000/gvfs/google-drive:host=gmail.com,user=kapoivha/0ANvd_q2Lq5AgUk9PVA/1aH8yIasxY_XFBczPXEUy5JnGobh4mQZq/`
+- **Contents:**
+  - `insight_json_pipeline_stages/` — 7 JSON fixtures (stages 00–05), mirrors `n8n/fixtures/`
+  - `13.03.26_Opening Hackathon Präsi (1).pdf` — hackathon opening deck
+
+#### Drive Folder Contents [CLAUDE]
+`insight_json_pipeline_stages/` on Drive mirrors `n8n/` locally:
+- `00_email_trigger_raw.json` → `05_urgent.json` — pipeline stage fixtures
+- `architecture.md` — full pipeline diagram + node inventory (mirrors `n8n/architecture.md`)
+- `schema_db.md` — MongoDB schema + indexes + query examples (mirrors `n8n/schema_db.md`)
+
+#### Drive Update Policy [CLAUDE]
+**When to sync (mandatory):**
+1. Any fixture JSON is modified (schema field added/changed)
+2. `architecture.md` or `schema_db.md` updated (pipeline change, schema validation)
+3. A new normalizer or pipeline node is added
+4. Before any team sync session or pitch prep
+
+**Schema validation gate:** When KpihX validates the MongoDB schema → agent MUST update
+`n8n/schema_db.md` locally first, then immediately run the sync command below.
+
+**How to sync** (run from project root):
+```bash
+DEST="/run/user/1000/gvfs/google-drive:host=gmail.com,user=kapoivha/0ANvd_q2Lq5AgUk9PVA/1aH8yIasxY_XFBczPXEUy5JnGobh4mQZq/insight_json_pipeline_stages"
+# fixtures
+for f in n8n/fixtures/*.json; do gio copy "$f" "$DEST/$(basename $f)"; done
+# docs
+gio copy n8n/architecture.md "$DEST/architecture.md"
+gio copy n8n/schema_db.md "$DEST/schema_db.md"
+```
 
 ### 8. Key People [CLAUDE]
 **Mentors** (Discord `#ask-a-mentor`):

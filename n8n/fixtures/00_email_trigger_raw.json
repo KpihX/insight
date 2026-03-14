@@ -1,0 +1,23 @@
+{
+  "_comment": "Raw output from n8n IMAP Email Trigger node. This is the unprocessed payload that enters normalize-email.",
+  "from": {
+    "value": [
+      { "address": "maria.schmidt@schule-musterstadt.de", "name": "Maria Schmidt" }
+    ],
+    "html": "<span>Maria Schmidt</span> &lt;maria.schmidt@schule-musterstadt.de&gt;",
+    "text": "Maria Schmidt <maria.schmidt@schule-musterstadt.de>"
+  },
+  "to": {
+    "value": [
+      { "address": "sekretariat@schule-musterstadt.de", "name": "Sekretariat" }
+    ]
+  },
+  "subject": "Absence report - Max Muller 13.03.2026",
+  "text": "Dear Secretariat,\n\nMax Muller (Class 8B) will be absent today (13 March 2026) due to illness. Please notify his homeroom teacher.\n\nBest regards,\nMaria Schmidt (Class Teacher 8B)",
+  "html": "<p>Dear Secretariat,</p><p>Max Muller (Class 8B) will be absent today due to illness.</p>",
+  "date": "2026-03-13T08:15:00.000Z",
+  "messageId": "<msg-20260313-001@mail.schule-musterstadt.de>",
+  "inReplyTo": null,
+  "references": [],
+  "attachments": []
+}

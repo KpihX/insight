@@ -1,0 +1,40 @@
+services:
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: insight
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval \"db.adminCommand('ping').ok\" | grep 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - insight-net
+    # Not exposed on host. n8n reaches it through Docker DNS: mongo:27017
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    env_file:
+      - .env.n8n
+    volumes:
+      - n8n-data:/home/node/.n8n
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - insight-net
+
+networks:
+  insight-net:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  n8n-data:

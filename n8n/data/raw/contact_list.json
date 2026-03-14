@@ -1,0 +1,604 @@
+[
+    {
+      "id": "staff_1",
+      "name": "Sarah Lee",
+      "role": "teacher",
+      "contacts": ["sarah.lee@example.com"],
+      "aliases": ["Sarah Lee", "Lee"]
+    },
+    {
+      "id": "staff_2",
+      "name": "Emily Carter",
+      "role": "teacher",
+      "contacts": ["emily.carter@example.com"],
+      "aliases": ["Emily Carter", "Carter"]
+    },
+    {
+      "id": "staff_3",
+      "name": "Mark Johnson",
+      "role": "teacher",
+      "contacts": ["mark.johnson@example.com"],
+      "aliases": ["Mark Johnson", "Johnson"]
+    },
+    {
+      "id": "staff_4",
+      "name": "David Brown",
+      "role": "admin",
+      "contacts": ["david.brown@example.com"],
+      "aliases": ["David Brown", "Brown"]
+    },
+    {
+      "id": "staff_5",
+      "name": "John Smith",
+      "role": "admin",
+      "contacts": ["john.smith@example.com"],
+      "aliases": ["John Smith", "Smith"]
+    },
+    {
+      "id": "staff_6",
+      "name": "School Notification Service",
+      "role": "admin",
+      "contacts": ["+15550001111", "+15552223333", "+15553334444", "+15554445555", "+15555556666"],
+      "aliases": ["School", "Notification"]
+    },
+    {
+      "id": "parent_1",
+      "name": "Jane Doe",
+      "role": "parent",
+      "contacts": ["+15559876543"],
+      "aliases": ["Jane Doe", "Doe family"]
+    },
+    {
+      "id": "parent_2",
+      "name": "John Smith",
+      "role": "parent",
+      "contacts": ["+15558765432"],
+      "aliases": ["John Smith", "Smith family"]
+    },
+    {
+      "id": "parent_3",
+      "name": "Maria Garcia",
+      "role": "parent",
+      "contacts": ["+15557654321"],
+      "aliases": ["Maria Garcia", "Garcia family"]
+    },
+    {
+      "id": "parent_4",
+      "name": "Robert Johnson",
+      "role": "parent",
+      "contacts": ["+15556543210"],
+      "aliases": ["Robert Johnson", "Johnson family"]
+    },
+    {
+      "id": "parent_5",
+      "name": "Sarah Williams",
+      "role": "parent",
+      "contacts": ["+15555432109"],
+      "aliases": ["Sarah Williams", "Williams family"]
+    },
+    {
+      "id": "parent_6",
+      "name": "David Brown",
+      "role": "parent",
+      "contacts": ["+15554321098"],
+      "aliases": ["David Brown", "Brown family"]
+    },
+    {
+      "id": "parent_7",
+      "name": "Lisa Anderson",
+      "role": "parent",
+      "contacts": ["+15553210987"],
+      "aliases": ["Lisa Anderson", "Anderson family"]
+    },
+    {
+      "id": "parent_8",
+      "name": "Michael Wilson",
+      "role": "parent",
+      "contacts": ["+15552109876"],
+      "aliases": ["Michael Wilson", "Wilson family"]
+    },
+    {
+      "id": "parent_9",
+      "name": "Emily Taylor",
+      "role": "parent",
+      "contacts": ["+15551098765"],
+      "aliases": ["Emily Taylor", "Taylor family"]
+    },
+    {
+      "id": "parent_10",
+      "name": "James Martinez",
+      "role": "parent",
+      "contacts": ["+15559876123"],
+      "aliases": ["James Martinez", "Martinez family"]
+    },
+    {
+      "id": "parent_11",
+      "name": "Jennifer Lee",
+      "role": "parent",
+      "contacts": ["+15558765433"],
+      "aliases": ["Jennifer Lee", "Lee family"]
+    },
+    {
+      "id": "parent_12",
+      "name": "Nina Fischer",
+      "role": "parent",
+      "contacts": ["+15557654322", "+15559876122"],
+      "aliases": ["Fischer family", "Nina Fischer"]
+    },
+    {
+      "id": "parent_13",
+      "name": "Amanda White",
+      "role": "parent",
+      "contacts": ["+15556543211"],
+      "aliases": ["Amanda White", "White family"]
+    },
+    {
+      "id": "parent_14",
+      "name": "Kevin Rodriguez",
+      "role": "parent",
+      "contacts": ["+15555432108"],
+      "aliases": ["Kevin Rodriguez", "Rodriguez family"]
+    },
+    {
+      "id": "parent_15",
+      "name": "Michelle Wang",
+      "role": "parent",
+      "contacts": ["+15554321097"],
+      "aliases": ["Michelle Wang", "Wang family"]
+    },
+    {
+      "id": "parent_16",
+      "name": "Daniel Moore",
+      "role": "parent",
+      "contacts": ["+15553210986"],
+      "aliases": ["Daniel Moore", "Moore family"]
+    },
+    {
+      "id": "parent_17",
+      "name": "Laura Jackson",
+      "role": "parent",
+      "contacts": ["+15552109875"],
+      "aliases": ["Laura Jackson", "Jackson family"]
+    },
+    {
+      "id": "parent_18",
+      "name": "Thomas Harris",
+      "role": "parent",
+      "contacts": ["+15551098764"],
+      "aliases": ["Thomas Harris", "Harris family"]
+    },
+    {
+      "id": "parent_19",
+      "name": "Patricia Martin",
+      "role": "parent",
+      "contacts": ["+15559876122"],
+      "aliases": ["Patricia Martin", "Martin family"]
+    },
+    {
+      "id": "parent_20",
+      "name": "Charles Thompson",
+      "role": "parent",
+      "contacts": ["+15558765434"],
+      "aliases": ["Charles Thompson", "Thompson family"]
+    },
+    {
+      "id": "parent_21",
+      "name": "Nancy Lewis",
+      "role": "parent",
+      "contacts": ["+15557654323"],
+      "aliases": ["Nancy Lewis", "Lewis family"]
+    },
+    {
+      "id": "parent_22",
+      "name": "Steven Walker",
+      "role": "parent",
+      "contacts": ["+15556543212"],
+      "aliases": ["Steven Walker", "Walker family"]
+    },
+    {
+      "id": "parent_23",
+      "name": "Betty Hall",
+      "role": "parent",
+      "contacts": ["+15555432107"],
+      "aliases": ["Betty Hall", "Hall family"]
+    },
+    {
+      "id": "parent_24",
+      "name": "Edward Allen",
+      "role": "parent",
+      "contacts": ["+15554321096"],
+      "aliases": ["Edward Allen", "Allen family"]
+    },
+    {
+      "id": "parent_25",
+      "name": "Donna Young",
+      "role": "parent",
+      "contacts": ["+15553210985"],
+      "aliases": ["Donna Young", "Young family"]
+    },
+    {
+      "id": "parent_26",
+      "name": "Kenneth King",
+      "role": "parent",
+      "contacts": ["+15552109874"],
+      "aliases": ["Kenneth King", "King family"]
+    },
+    {
+      "id": "parent_27",
+      "name": "Susan Wright",
+      "role": "parent",
+      "contacts": ["+15551098763"],
+      "aliases": ["Susan Wright", "Wright family"]
+    },
+    {
+      "id": "parent_28",
+      "name": "George Scott",
+      "role": "parent",
+      "contacts": ["+15559876121"],
+      "aliases": ["George Scott", "Scott family"]
+    },
+    {
+      "id": "parent_29",
+      "name": "Karen Green",
+      "role": "parent",
+      "contacts": ["+15558765435"],
+      "aliases": ["Karen Green", "Green family"]
+    },
+    {
+      "id": "parent_30",
+      "name": "Brian Baker",
+      "role": "parent",
+      "contacts": ["+15557654324"],
+      "aliases": ["Brian Baker", "Baker family"]
+    },
+    {
+      "id": "parent_31",
+      "name": "Rebecca Adams",
+      "role": "parent",
+      "contacts": ["+15556543213"],
+      "aliases": ["Rebecca Adams", "Adams family"]
+    },
+    {
+      "id": "parent_32",
+      "name": "Jason Nelson",
+      "role": "parent",
+      "contacts": ["+15555432106"],
+      "aliases": ["Jason Nelson", "Nelson family"]
+    },
+    {
+      "id": "parent_33",
+      "name": "Carol Hill",
+      "role": "parent",
+      "contacts": ["+15554321095"],
+      "aliases": ["Carol Hill", "Hill family"]
+    },
+    {
+      "id": "parent_34",
+      "name": "Eric Ramirez",
+      "role": "parent",
+      "contacts": ["+15553210984"],
+      "aliases": ["Eric Ramirez", "Ramirez family"]
+    },
+    {
+      "id": "parent_35",
+      "name": "Amy Campbell",
+      "role": "parent",
+      "contacts": ["+15552109873"],
+      "aliases": ["Amy Campbell", "Campbell family"]
+    },
+    {
+      "id": "parent_36",
+      "name": "Gary Mitchell",
+      "role": "parent",
+      "contacts": ["+15551098762"],
+      "aliases": ["Gary Mitchell", "Mitchell family"]
+    },
+    {
+      "id": "parent_37",
+      "name": "Sharon Perez",
+      "role": "parent",
+      "contacts": ["+15559876120"],
+      "aliases": ["Sharon Perez", "Perez family"]
+    },
+    {
+      "id": "parent_38",
+      "name": "Mark Roberts",
+      "role": "parent",
+      "contacts": ["+15558765436"],
+      "aliases": ["Mark Roberts", "Roberts family"]
+    },
+    {
+      "id": "parent_39",
+      "name": "Deborah Turner",
+      "role": "parent",
+      "contacts": ["+15557654325"],
+      "aliases": ["Deborah Turner", "Turner family"]
+    },
+    {
+      "id": "parent_40",
+      "name": "Ronald Phillips",
+      "role": "parent",
+      "contacts": ["+15556543214"],
+      "aliases": ["Ronald Phillips", "Phillips family"]
+    },
+    {
+      "id": "parent_41",
+      "name": "Sandra Evans",
+      "role": "parent",
+      "contacts": ["+15555432105"],
+      "aliases": ["Sandra Evans", "Evans family"]
+    },
+    {
+      "id": "parent_42",
+      "name": "Jeffrey Turner",
+      "role": "parent",
+      "contacts": ["+15554321094"],
+      "aliases": ["Jeffrey Turner", "Turner family"]
+    },
+    {
+      "id": "parent_43",
+      "name": "Pamela Parker",
+      "role": "parent",
+      "contacts": ["+15553210983"],
+      "aliases": ["Pamela Parker", "Parker family"]
+    },
+    {
+      "id": "parent_44",
+      "name": "Lawrence Collins",
+      "role": "parent",
+      "contacts": ["+15552109872"],
+      "aliases": ["Lawrence Collins", "Collins family"]
+    },
+    {
+      "id": "parent_45",
+      "name": "Kathleen Stewart",
+      "role": "parent",
+      "contacts": ["+15551098761"],
+      "aliases": ["Kathleen Stewart", "Stewart family"]
+    },
+    {
+      "id": "parent_46",
+      "name": "Dennis Sanchez",
+      "role": "parent",
+      "contacts": ["+15559876119"],
+      "aliases": ["Dennis Sanchez", "Sanchez family"]
+    },
+    {
+      "id": "parent_47",
+      "name": "Cynthia Morris",
+      "role": "parent",
+      "contacts": ["+15558765437"],
+      "aliases": ["Cynthia Morris", "Morris family"]
+    },
+    {
+      "id": "parent_48",
+      "name": "Jerry Rogers",
+      "role": "parent",
+      "contacts": ["+15557654326"],
+      "aliases": ["Jerry Rogers", "Rogers family"]
+    },
+    {
+      "id": "parent_49",
+      "name": "Doris Reed",
+      "role": "parent",
+      "contacts": ["+15556543215"],
+      "aliases": ["Doris Reed", "Reed family"]
+    },
+    {
+      "id": "parent_50",
+      "name": "Ralph Cook",
+      "role": "parent",
+      "contacts": ["+15555432104"],
+      "aliases": ["Ralph Cook", "Cook family"]
+    },
+    {
+      "id": "parent_51",
+      "name": "Marie Morgan",
+      "role": "parent",
+      "contacts": ["+15554321093"],
+      "aliases": ["Marie Morgan", "Morgan family"]
+    },
+    {
+      "id": "parent_52",
+      "name": "Albert Bell",
+      "role": "parent",
+      "contacts": ["+15553210982"],
+      "aliases": ["Albert Bell", "Bell family"]
+    },
+    {
+      "id": "parent_53",
+      "name": "Joyce Murphy",
+      "role": "parent",
+      "contacts": ["+15552109871"],
+      "aliases": ["Joyce Murphy", "Murphy family"]
+    },
+    {
+      "id": "parent_54",
+      "name": "Henry Bailey",
+      "role": "parent",
+      "contacts": ["+15551098760"],
+      "aliases": ["Henry Bailey", "Bailey family"]
+    },
+    {
+      "id": "parent_55",
+      "name": "Beverly Rivera",
+      "role": "parent",
+      "contacts": ["+15559876118"],
+      "aliases": ["Beverly Rivera", "Rivera family"]
+    },
+    {
+      "id": "parent_56",
+      "name": "Carl Cooper",
+      "role": "parent",
+      "contacts": ["+15558765438"],
+      "aliases": ["Carl Cooper", "Cooper family"]
+    },
+    {
+      "id": "parent_57",
+      "name": "Teresa Richardson",
+      "role": "parent",
+      "contacts": ["+15557654327"],
+      "aliases": ["Teresa Richardson", "Richardson family"]
+    },
+    {
+      "id": "parent_58",
+      "name": "Harold Cox",
+      "role": "parent",
+      "contacts": ["+15556543216"],
+      "aliases": ["Harold Cox", "Cox family"]
+    },
+    {
+      "id": "parent_59",
+      "name": "Janice Howard",
+      "role": "parent",
+      "contacts": ["+15555432103"],
+      "aliases": ["Janice Howard", "Howard family"]
+    },
+    {
+      "id": "parent_60",
+      "name": "Peter Ward",
+      "role": "parent",
+      "contacts": ["+15554321092"],
+      "aliases": ["Peter Ward", "Ward family"]
+    },
+    {
+      "id": "parent_61",
+      "name": "Martha Torres",
+      "role": "parent",
+      "contacts": ["+15553210981"],
+      "aliases": ["Martha Torres", "Torres family"]
+    },
+    {
+      "id": "parent_62",
+      "name": "Roger Peterson",
+      "role": "parent",
+      "contacts": ["+15552109870"],
+      "aliases": ["Roger Peterson", "Peterson family"]
+    },
+    {
+      "id": "parent_63",
+      "name": "Frances Gray",
+      "role": "parent",
+      "contacts": ["+15551098759"],
+      "aliases": ["Frances Gray", "Gray family"]
+    },
+    {
+      "id": "parent_64",
+      "name": "Gerald Ramirez",
+      "role": "parent",
+      "contacts": ["+15559876117"],
+      "aliases": ["Gerald Ramirez", "Ramirez family"]
+    },
+    {
+      "id": "parent_65",
+      "name": "Gloria James",
+      "role": "parent",
+      "contacts": ["+15558765439"],
+      "aliases": ["Gloria James", "James family"]
+    },
+    {
+      "id": "parent_66",
+      "name": "Wayne Watson",
+      "role": "parent",
+      "contacts": ["+15557654328"],
+      "aliases": ["Wayne Watson", "Watson family"]
+    },
+    {
+      "id": "parent_67",
+      "name": "Joan Brooks",
+      "role": "parent",
+      "contacts": ["+15556543217"],
+      "aliases": ["Joan Brooks", "Brooks family"]
+    },
+    {
+      "id": "parent_68",
+      "name": "Billy Kelly",
+      "role": "parent",
+      "contacts": ["+15555432102"],
+      "aliases": ["Billy Kelly", "Kelly family"]
+    },
+    {
+      "id": "parent_69",
+      "name": "Judith Sanders",
+      "role": "parent",
+      "contacts": ["+15554321091"],
+      "aliases": ["Judith Sanders", "Sanders family"]
+    },
+    {
+      "id": "parent_70",
+      "name": "Roy Price",
+      "role": "parent",
+      "contacts": ["+15553210980"],
+      "aliases": ["Roy Price", "Price family"]
+    },
+    {
+      "id": "parent_71",
+      "name": "Brenda Bennett",
+      "role": "parent",
+      "contacts": ["+15552109869"],
+      "aliases": ["Brenda Bennett", "Bennett family"]
+    },
+    {
+      "id": "parent_72",
+      "name": "Ruth Wood",
+      "role": "parent",
+      "contacts": ["+15551098758"],
+      "aliases": ["Ruth Wood", "Wood family"]
+    },
+    {
+      "id": "parent_73",
+      "name": "Eugene Barnes",
+      "role": "parent",
+      "contacts": ["+15559876116"],
+      "aliases": ["Eugene Barnes", "Barnes family"]
+    },
+    {
+      "id": "parent_74",
+      "name": "Tina Ross",
+      "role": "parent",
+      "contacts": ["+15558765440"],
+      "aliases": ["Tina Ross", "Ross family"]
+    },
+    {
+      "id": "parent_75",
+      "name": "Vincent Henderson",
+      "role": "parent",
+      "contacts": ["+15557654329"],
+      "aliases": ["Vincent Henderson", "Henderson family"]
+    },
+    {
+      "id": "parent_76",
+      "name": "Ruby Coleman",
+      "role": "parent",
+      "contacts": ["+15556543218"],
+      "aliases": ["Ruby Coleman", "Coleman family"]
+    },
+    {
+      "id": "parent_77",
+      "name": "Howard Jenkins",
+      "role": "parent",
+      "contacts": ["+15555432101"],
+      "aliases": ["Howard Jenkins", "Jenkins family"]
+    },
+    {
+      "id": "parent_78",
+      "name": "Bonnie Perry",
+      "role": "parent",
+      "contacts": ["+15554321090"],
+      "aliases": ["Bonnie Perry", "Perry family"]
+    },
+    {
+      "id": "parent_79",
+      "name": "Randy Powell",
+      "role": "parent",
+      "contacts": ["+15553210979"],
+      "aliases": ["Randy Powell", "Powell family"]
+    },
+    {
+      "id": "parent_80",
+      "name": "Louis Long",
+      "role": "parent",
+      "contacts": ["+15552109868"],
+      "aliases": ["Louis Long", "Long family"]
+    }
+  ]

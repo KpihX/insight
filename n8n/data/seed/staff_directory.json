@@ -1,0 +1,78 @@
+[
+  {
+    "staff_id": "staff_1",
+    "name": "Sarah Lee",
+    "role": "teacher",
+    "contacts": [
+      "sarah.lee@example.com"
+    ],
+    "aliases": [
+      "Sarah Lee",
+      "Lee"
+    ]
+  },
+  {
+    "staff_id": "staff_2",
+    "name": "Emily Carter",
+    "role": "teacher",
+    "contacts": [
+      "emily.carter@example.com"
+    ],
+    "aliases": [
+      "Emily Carter",
+      "Carter"
+    ]
+  },
+  {
+    "staff_id": "staff_3",
+    "name": "Mark Johnson",
+    "role": "teacher",
+    "contacts": [
+      "mark.johnson@example.com"
+    ],
+    "aliases": [
+      "Mark Johnson",
+      "Johnson"
+    ]
+  },
+  {
+    "staff_id": "staff_4",
+    "name": "David Brown",
+    "role": "admin",
+    "contacts": [
+      "david.brown@example.com"
+    ],
+    "aliases": [
+      "David Brown",
+      "Brown"
+    ]
+  },
+  {
+    "staff_id": "staff_5",
+    "name": "John Smith",
+    "role": "admin",
+    "contacts": [
+      "john.smith@example.com"
+    ],
+    "aliases": [
+      "John Smith",
+      "Smith"
+    ]
+  },
+  {
+    "staff_id": "staff_6",
+    "name": "School Notification Service",
+    "role": "admin",
+    "contacts": [
+      "+15550001111",
+      "+15552223333",
+      "+15553334444",
+      "+15554445555",
+      "+15555556666"
+    ],
+    "aliases": [
+      "School",
+      "Notification"
+    ]
+  }
+]

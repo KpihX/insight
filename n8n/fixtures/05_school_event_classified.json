@@ -1,0 +1,28 @@
+{
+  "source_system": "imap",
+  "source_channel": "mailbox",
+  "sender_name": "Nina Fischer",
+  "sender_contact": "4917612345678",
+  "receivers": [
+    "admin_7",
+    "teacher_42"
+  ],
+  "subject": "Emma Fischer absent today",
+  "content": "Emma Fischer from class 6A will be absent today because of illness.",
+  "timestamp": "2026-03-13T08:15:00.000Z",
+  "original_id": "<msg-20260313-001@school.de>",
+  "sender_group": "parent",
+  "category": "absence_report",
+  "urgent": true,
+  "important": true,
+  "action_required": true,
+  "status": "new",
+  "handled_by": null,
+  "handled_at": null,
+  "archived_by": null,
+  "archived_at": null,
+  "action_note": null,
+  "summary": "Parent reports a student absence and the school should notify the relevant teacher and administration.",
+  "received_at": "2026-03-13T08:15:02.000Z",
+  "classified_at": "2026-03-13T08:15:04.000Z"
+}

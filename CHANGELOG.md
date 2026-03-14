@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## [0.4.0] - 2026-03-13
+- [x] Architecture pivot: n8n-first. All AI logic lives in n8n Code nodes (JS). No external API server. [CLAUDE]
+- [x] Deleted obsolete artifacts: `api.py`, `Dockerfile`, `src/` (TypeScript), `tsconfig.json`, `normalizers/` (Python). [CLAUDE]
+- [x] `package.json`: removed TypeScript/tsx deps, simplified scripts to `node wa-bridge.js` only. [CLAUDE]
+- [x] `docker-compose.yml`: removed `insight-api` service — n8n is the only container. [CLAUDE]
+- [x] Created `n8n/nodes/`: version-controlled JS sources for all Code nodes (normalize-email, normalize-wa, gemini-classify). [CLAUDE]
+- [x] Created `n8n/fixtures/`: 7 JSON files documenting exact data shape at each pipeline stage (00–05). [CLAUDE]
+- [x] Created `n8n/README.md`: pipeline map, fixture index, schema, variable table, new-source guide. [CLAUDE]
+- [x] Deployed complete 8-node n8n workflow via n8n-mcp (workflow ID: yBh4AiGZZCMmHTIg). [CLAUDE]
+- [x] wa-bridge.js: WhatsApp → n8n bridge using Baileys + phone pairing + fetchLatestBaileysVersion(). [CLAUDE]
+
 ## [0.3.0] - 2026-03-13
 - [x] TypeScript migration — replaced Python scaffold with full TS project. [CLAUDE]
 - [x] Added `package.json`, `tsconfig.json` (Node16/ESM, strict, TS 5.7). [CLAUDE]

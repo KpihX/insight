@@ -1,0 +1,3702 @@
+[
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T08:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00001@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T08:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00002@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-10T09:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00003@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-10T09:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00004@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T10:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00005@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T10:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00006@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-10T11:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00007@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T11:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00008@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-10T12:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00009@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-10T12:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00010@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-10T13:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00011@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T13:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00012@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-10T14:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00013@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T14:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00014@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-10T15:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00015@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T15:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00016@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T16:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00017@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-10T16:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00018@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T17:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00019@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T17:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00020@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T18:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00021@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T18:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00022@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T19:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00023@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-10T19:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00024@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-10T20:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00025@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-10T20:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00026@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-10T21:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00027@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-10T21:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00028@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T22:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00029@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T22:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00030@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T23:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00031@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-10T23:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00032@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T00:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00033@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T00:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00034@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T01:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00035@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T01:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00036@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T02:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00037@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T02:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00038@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T03:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00039@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T03:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00040@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T04:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00041@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T04:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00042@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T05:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00043@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T05:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00044@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T06:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00045@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T06:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00046@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T07:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00047@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T07:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00048@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T08:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00049@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T08:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00050@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T09:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00051@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T09:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00052@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T10:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00053@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T10:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00054@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T11:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00055@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T11:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00056@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T12:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00057@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T12:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00058@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T13:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00059@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T13:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00060@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T14:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00061@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T14:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00062@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T15:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00063@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T15:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00064@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T16:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00065@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T16:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00066@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T17:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00067@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T17:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00068@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T18:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00069@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T18:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00070@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T19:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00071@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T19:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00072@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T20:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00073@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T20:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00074@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-11T21:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00075@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T21:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00076@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-11T22:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00077@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-11T22:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00078@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-11T23:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00079@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-11T23:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00080@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-12T00:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00081@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-12T00:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00082@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-12T01:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00083@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-12T01:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00084@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-12T02:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00085@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-12T02:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00086@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-12T03:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00087@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-12T03:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00088@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Schedule Change",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-12T04:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00089@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-12T04:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00090@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "date": "2026-03-12T05:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00091@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-12T05:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00092@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Project Update",
+    "from": {
+      "value": [
+        {
+          "address": "sarah.lee@example.com",
+          "name": "Sarah Lee"
+        }
+      ],
+      "html": "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+      "text": "Sarah Lee <sarah.lee@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-12T06:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00093@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-12T06:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00094@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "date": "2026-03-12T07:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00095@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "mark.johnson@example.com",
+          "name": "Mark Johnson"
+        }
+      ],
+      "html": "<span class=\"peer\">Mark Johnson &lt;<a href=\"mailto:mark.johnson@example.com\">mark.johnson@example.com</a>&gt;</span>",
+      "text": "Mark Johnson <mark.johnson@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-12T07:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00096@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-12T08:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00097@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Meeting Reminder",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "date": "2026-03-12T08:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00098@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Assignment Question",
+    "from": {
+      "value": [
+        {
+          "address": "emily.carter@example.com",
+          "name": "Emily Carter"
+        }
+      ],
+      "html": "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+      "text": "Emily Carter <emily.carter@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "david.brown@example.com",
+          "name": "David Brown"
+        }
+      ],
+      "html": "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+      "text": "David Brown <david.brown@example.com>"
+    },
+    "date": "2026-03-12T09:00:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00099@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  },
+  {
+    "subject": "Re: Feedback on Report",
+    "from": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "to": {
+      "value": [
+        {
+          "address": "john.smith@example.com",
+          "name": "John Smith"
+        }
+      ],
+      "html": "<span class=\"peer\">John Smith &lt;<a href=\"mailto:john.smith@example.com\">john.smith@example.com</a>&gt;</span>",
+      "text": "John Smith <john.smith@example.com>"
+    },
+    "date": "2026-03-12T09:30:00Z",
+    "text": "This is the plain text body of the email regarding the topic mentioned.",
+    "html": "<body><p>This is the HTML body of the email regarding the topic mentioned.</p></body>",
+    "messageId": "<MSG00100@mail.example.com>",
+    "headerLines": [
+      {
+        "key": "mime-version",
+        "line": "MIME-Version: 1.0"
+      },
+      {
+        "key": "content-type",
+        "line": "Content-Type: text/html; charset=UTF-8"
+      }
+    ]
+  }
+]

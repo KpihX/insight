@@ -1,0 +1,14 @@
+{
+  "source_system": "imap",
+  "source_channel": "mailbox",
+  "sender_name": "Maria Schmidt",
+  "sender_contact": "maria.schmidt@school.de",
+  "receivers": [
+    "absence@school.de",
+    "admin"
+  ],
+  "subject": "Emma Fischer absent today",
+  "content": "Emma Fischer from class 6A will be absent today because of illness.",
+  "timestamp": "2026-03-13T08:15:00.000Z",
+  "original_id": "<msg-20260313-001@school.de>"
+}

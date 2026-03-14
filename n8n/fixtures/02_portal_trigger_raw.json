@@ -1,0 +1,12 @@
+{
+  "sender_name": "School Portal",
+  "sender_contact": "portal@school.de",
+  "receivers": [
+    "teachers",
+    "admin"
+  ],
+  "subject": "Class 6A room change",
+  "content": "Class 6A math session is moved from room B12 to room C04 today at 10:00.",
+  "timestamp": "2026-03-13T09:30:00.000Z",
+  "original_id": "portal-event-20260313-room-change-6a"
+}

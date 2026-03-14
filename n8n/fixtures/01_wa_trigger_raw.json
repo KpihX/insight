@@ -1,0 +1,11 @@
+{
+  "_comment": "Raw payload received by n8n Webhook Trigger from wa-bridge.js (Baileys format). This enters normalize-wa.",
+  "source": "whatsapp",
+  "messageId": "3EB0C4A9F23B1D7E8A90",
+  "from": "4917612345678",
+  "fromName": "Nina Fischer",
+  "groupId": null,
+  "body": "Guten Morgen, meine Tochter Emma Fischer aus der Klasse 6A ist heute leider krank und kann nicht zur Schule kommen. Bitte entschuldigen Sie ihr Fehlen.",
+  "timestamp": 1741853400,
+  "type": "text"
+}
