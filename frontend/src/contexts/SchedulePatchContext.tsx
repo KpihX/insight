@@ -31,16 +31,8 @@ export interface AppliedCalendarPatch {
 interface SchedulePatchContextType {
   currentSuggestion: SuggestedCalendarPatch | null;
   appliedPatches: AppliedCalendarPatch[];
-  currentToast: LiveEventToast | null;
   dismissSuggestion: () => void;
   applySuggestion: (patch: AppliedCalendarPatch) => void;
-}
-
-export interface LiveEventToast {
-  eventId: string;
-  title: string;
-  summary: string;
-  senderLabel?: string;
 }
 
 const APPLIED_PATCHES_STORAGE_KEY = 'insight.appliedCalendarPatches.v2';
@@ -67,8 +59,6 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
   const [currentSuggestion, setCurrentSuggestion] = useState<SuggestedCalendarPatch | null>(null);
   const [appliedPatches, setAppliedPatches] = useState<AppliedCalendarPatch[]>(() => readArrayFromStorage(APPLIED_PATCHES_STORAGE_KEY));
   const [dismissedSignatures, setDismissedSignatures] = useState<string[]>(() => readArrayFromStorage(DISMISSED_PATCHES_STORAGE_KEY));
-  const [toastQueue, setToastQueue] = useState<LiveEventToast[]>([]);
-  const [currentToast, setCurrentToast] = useState<LiveEventToast | null>(null);
   const seenEventIds = useRef<Set<string>>(new Set());
   const suggestionInFlight = useRef<string | null>(null);
 
@@ -146,16 +136,6 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
                 suggestionInFlight.current = item.id;
                 setCurrentSuggestion(buildSuggestion(item.id, detail));
               }
-            } else {
-              setToastQueue((previous) => [
-                ...previous,
-                {
-                  eventId: item.id,
-                  title: item.title,
-                  summary: item.summary,
-                  senderLabel: item.sender_label,
-                },
-              ]);
             }
 
             seenEventIds.current.add(item.id);
@@ -176,29 +156,10 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
     };
   }, [appliedPatches, currentSuggestion?.sourceEventId, dismissedSignatures]);
 
-  useEffect(() => {
-    if (currentToast || toastQueue.length === 0) return;
-
-    const [nextToast, ...rest] = toastQueue;
-    setCurrentToast(nextToast);
-    setToastQueue(rest);
-  }, [currentToast, toastQueue]);
-
-  useEffect(() => {
-    if (!currentToast) return;
-
-    const timeout = setTimeout(() => {
-      setCurrentToast(null);
-    }, 4200);
-
-    return () => clearTimeout(timeout);
-  }, [currentToast]);
-
   const contextValue = useMemo<SchedulePatchContextType>(
     () => ({
       currentSuggestion,
       appliedPatches,
-      currentToast,
       dismissSuggestion: () => {
         if (!currentSuggestion) return;
         const signature = buildPatchSignature(currentSuggestion.sourceEventId, currentSuggestion.patch);
@@ -217,7 +178,7 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
         setCurrentSuggestion(null);
       },
     }),
-    [appliedPatches, currentSuggestion, currentToast]
+    [appliedPatches, currentSuggestion]
   );
 
   return <SchedulePatchContext.Provider value={contextValue}>{children}</SchedulePatchContext.Provider>;
