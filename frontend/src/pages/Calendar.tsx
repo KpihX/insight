@@ -151,10 +151,10 @@ export default function Calendar() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-92px)] w-full gap-4 relative">
-      <div className="flex items-center justify-between bg-surface p-4 rounded-xl border-[0.5px] border-border-light shadow-card shrink-0">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-3">
+    <div className="flex flex-col min-h-[calc(100vh-92px)] w-full gap-4 relative">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-surface p-4 rounded-xl border-[0.5px] border-border-light shadow-card shrink-0">
+        <div className="flex flex-wrap items-center gap-3 md:gap-6">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="text-[14px] font-medium text-text-main">Select type:</span>
             <select
               value={filter}
@@ -168,9 +168,9 @@ export default function Calendar() {
             </select>
           </div>
 
-          <div className="w-[1px] h-6 bg-border-light" />
+          <div className="hidden md:block w-[1px] h-6 bg-border-light" />
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="text-[14px] font-medium text-text-main">Add event</span>
             <button
               onClick={() => setIsModalOpen(true)}
@@ -183,85 +183,89 @@ export default function Calendar() {
           </div>
         </div>
 
-        <div className="text-[12px] text-text-3">
+        <div className="text-[12px] text-text-3 md:text-right">
           Validated Insight overlays appear directly on the timetable.
         </div>
       </div>
 
       <div className="flex-1 bg-surface rounded-xl border-[0.5px] border-border-light shadow-card overflow-hidden flex flex-col">
-        <div className="flex border-b-[0.5px] border-border-strong shrink-0 bg-surface">
-          <div className="w-[60px] shrink-0 border-r-[0.5px] border-border-strong flex items-center justify-center p-3">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-text-main">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 6v6l4 2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          {days.map((day, index) => (
-            <div
-              key={day.id}
-              className={`flex-1 flex items-center justify-center py-4 text-[15px] font-semibold text-text-main ${index < days.length - 1 ? 'border-r-[0.5px] border-border-strong' : ''}`}
-            >
-              {day.label}
-            </div>
-          ))}
-        </div>
-
-        <div className="flex-1 overflow-y-auto scroll-area relative flex">
-          <div className="w-[60px] shrink-0 border-r-[0.5px] border-border-strong relative bg-surface">
-            {HOURS.map((hour, index) => (
-              <div
-                key={hour}
-                className="absolute w-full flex justify-center text-[12px] font-medium text-text-main"
-                style={{ top: `${index * HOUR_HEIGHT - 8}px` }}
-              >
-                {hour}:00
+        <div className="flex-1 overflow-x-auto">
+          <div className="min-w-[760px] h-full flex flex-col">
+            <div className="flex border-b-[0.5px] border-border-strong shrink-0 bg-surface">
+              <div className="w-[60px] shrink-0 border-r-[0.5px] border-border-strong flex items-center justify-center p-3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-text-main">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
-            ))}
-          </div>
-
-          <div className="flex-1 flex relative">
-            <div className="absolute inset-0 pointer-events-none">
-              {HOURS.map((hour, index) => (
+              {days.map((day, index) => (
                 <div
-                  key={hour}
-                  className="absolute w-full border-t-[0.5px] border-border-light"
-                  style={{ top: `${index * HOUR_HEIGHT}px` }}
-                />
+                  key={day.id}
+                  className={`flex-1 flex items-center justify-center py-4 text-[15px] font-semibold text-text-main ${index < days.length - 1 ? 'border-r-[0.5px] border-border-strong' : ''}`}
+                >
+                  {day.label}
+                </div>
               ))}
             </div>
 
-            {days.map((day, index) => (
-              <div key={day.id} className={`flex-1 relative ${index < days.length - 1 ? 'border-r-[0.5px] border-border-strong' : ''}`}>
-                {filteredEvents
-                  .filter((event) => event.day === day.id)
-                  .map((event) => (
-                    <div
-                      key={event.id}
-                      onClick={() => setSelectedEvent(event)}
-                      className={`absolute left-2 right-2 rounded-md border-l-4 p-2 overflow-hidden transition-transform hover:scale-[1.02] cursor-pointer flex flex-col ${getEventColorClass(event)}`}
-                      style={getEventStyle(event)}
-                    >
-                      <div className="text-[12px] font-semibold leading-tight mb-0.5 truncate">{event.title}</div>
-                      {event.location && (
-                        <div className="text-[10px] font-medium opacity-80 truncate">{event.location}</div>
-                      )}
-                      {event.variant === 'overlay' && (
-                        <div className="text-[10px] font-bold uppercase opacity-90 mt-auto">Insight overlay</div>
-                      )}
-                      {event.type === 'new' && event.variant !== 'overlay' && (
-                        <div className="text-[10px] font-bold uppercase opacity-80 mt-auto">New</div>
-                      )}
-                    </div>
-                  ))}
+            <div className="flex-1 overflow-y-auto scroll-area relative flex">
+              <div className="w-[60px] shrink-0 border-r-[0.5px] border-border-strong relative bg-surface">
+                {HOURS.map((hour, index) => (
+                  <div
+                    key={hour}
+                    className="absolute w-full flex justify-center text-[12px] font-medium text-text-main"
+                    style={{ top: `${index * HOUR_HEIGHT - 8}px` }}
+                  >
+                    {hour}:00
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <div className="flex-1 flex relative">
+                <div className="absolute inset-0 pointer-events-none">
+                  {HOURS.map((hour, index) => (
+                    <div
+                      key={hour}
+                      className="absolute w-full border-t-[0.5px] border-border-light"
+                      style={{ top: `${index * HOUR_HEIGHT}px` }}
+                    />
+                  ))}
+                </div>
+
+                {days.map((day, index) => (
+                  <div key={day.id} className={`flex-1 relative ${index < days.length - 1 ? 'border-r-[0.5px] border-border-strong' : ''}`}>
+                    {filteredEvents
+                      .filter((event) => event.day === day.id)
+                      .map((event) => (
+                        <div
+                          key={event.id}
+                          onClick={() => setSelectedEvent(event)}
+                          className={`absolute left-2 right-2 rounded-md border-l-4 p-2 overflow-hidden transition-transform hover:scale-[1.02] cursor-pointer flex flex-col ${getEventColorClass(event)}`}
+                          style={getEventStyle(event)}
+                        >
+                          <div className="text-[12px] font-semibold leading-tight mb-0.5 truncate">{event.title}</div>
+                          {event.location && (
+                            <div className="text-[10px] font-medium opacity-80 truncate">{event.location}</div>
+                          )}
+                          {event.variant === 'overlay' && (
+                            <div className="text-[10px] font-bold uppercase opacity-90 mt-auto">Insight overlay</div>
+                          )}
+                          {event.type === 'new' && event.variant !== 'overlay' && (
+                            <div className="text-[10px] font-bold uppercase opacity-80 mt-auto">New</div>
+                          )}
+                        </div>
+                      ))}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {isModalOpen && (
-        <div className="absolute inset-0 bg-black/10 z-50 flex items-center justify-center">
-          <div className="bg-surface rounded-xl border-[0.5px] border-border-light shadow-card w-[400px] max-h-[90vh] overflow-y-auto">
+        <div className="absolute inset-0 bg-black/10 z-50 flex items-center justify-center px-3">
+          <div className="bg-surface rounded-xl border-[0.5px] border-border-light shadow-card w-full max-w-[400px] max-h-[90vh] overflow-y-auto">
             <div className="p-4 border-b-[0.5px] border-border-light flex items-center justify-between bg-surface2 sticky top-0 z-10">
               <div className="text-[15px] font-bold text-text-main">Add New Event</div>
               <button onClick={() => setIsModalOpen(false)} className="text-text-3 hover:text-text-main transition-colors">
@@ -283,7 +287,7 @@ export default function Calendar() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[12px] font-semibold text-text-main">Event Type</label>
                   <select
@@ -312,7 +316,7 @@ export default function Calendar() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[12px] font-semibold text-text-main">Start Time</label>
                   <select
@@ -393,8 +397,8 @@ export default function Calendar() {
       )}
 
       {selectedEvent && (
-        <div className="absolute inset-0 bg-black/10 z-50 flex items-center justify-center">
-          <div className="bg-surface rounded-xl border-[0.5px] border-border-light shadow-card w-[360px] overflow-hidden">
+        <div className="absolute inset-0 bg-black/10 z-50 flex items-center justify-center px-3">
+          <div className="bg-surface rounded-xl border-[0.5px] border-border-light shadow-card w-full max-w-[360px] overflow-hidden">
             <div className={`p-4 border-b-[0.5px] border-border-light flex items-center justify-between ${getEventColorClass(selectedEvent).split(' ')[0]}`}>
               <div className="text-[15px] font-bold">{selectedEvent.title}</div>
               <button onClick={() => setSelectedEvent(null)} className="opacity-70 hover:opacity-100 transition-opacity">

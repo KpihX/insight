@@ -201,7 +201,7 @@ export default function Home() {
   };
 
   return (
-    <div className="grid grid-cols-[340px_1fr_260px] gap-4 w-full">
+    <div className="grid grid-cols-1 xl:grid-cols-[340px_1fr_260px] gap-4 w-full">
       {/* LEFT COLUMN */}
       <div className="flex flex-col gap-4">
         {/* Summary Card */}
@@ -297,7 +297,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {homeScheduleDays.map((day) => (
               <div key={day.label} className="min-w-0">
                 <div className="text-[11px] font-bold tracking-[0.07em] uppercase text-text-3 pb-2 border-b-[0.5px] border-border-light mb-2">
