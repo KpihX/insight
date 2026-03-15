@@ -202,7 +202,7 @@ export default function Inbox() {
         : undefined;
 
   return (
-    <div className="flex h-[calc(100vh-92px)] gap-4 w-full relative">
+    <div className="flex flex-col xl:flex-row min-h-[calc(100vh-92px)] gap-4 w-full relative">
       {showSuccessBanner && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-brand-green text-white px-4 py-2 rounded-lg shadow-lg text-[13px] font-semibold flex items-center gap-2 animate-in fade-in slide-in-from-top-4">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
@@ -213,7 +213,7 @@ export default function Inbox() {
       )}
       {/* COLUMN 1: Filters (Retractable) */}
       {isSidebarOpen ? (
-        <div className="w-[180px] flex flex-col gap-2 shrink-0 relative">
+        <div className="w-full xl:w-[180px] flex flex-col gap-2 shrink-0 relative">
           <div className="flex items-center justify-between mb-2">
             <div className="text-[14px] font-bold text-text-main">All inboxes</div>
             <button 
@@ -295,7 +295,7 @@ export default function Inbox() {
       )}
 
       {/* COLUMN 2: Message List */}
-      <div className="w-[320px] flex flex-col bg-surface rounded-xl border-[0.5px] border-border-light shadow-card shrink-0 overflow-hidden">
+      <div className="w-full xl:w-[320px] flex flex-col bg-surface rounded-xl border-[0.5px] border-border-light shadow-card shrink-0 overflow-hidden min-h-[300px] xl:min-h-0">
         <div className="p-4 border-b-[0.5px] border-border-light flex flex-col gap-3">
           <div className="relative">
             <input
@@ -384,7 +384,7 @@ export default function Inbox() {
       </div>
 
       {/* COLUMN 3: Original Email */}
-      <div className="flex-1 flex flex-col bg-surface rounded-xl border-[0.5px] border-border-light shadow-card overflow-hidden min-w-[300px]">
+      <div className="w-full xl:flex-1 flex flex-col bg-surface rounded-xl border-[0.5px] border-border-light shadow-card overflow-hidden min-w-0 min-h-[320px]">
         {loadingDetail ? (
           <div className="flex-1 flex items-center justify-center text-text-3">Loading...</div>
         ) : selectedItem ? (
@@ -469,7 +469,7 @@ export default function Inbox() {
 
       {/* COLUMN 4: AI Reply / Manual Reply (Only visible when a reply mode is selected) */}
       {replyMode && (
-        <div className="w-[320px] flex flex-col bg-surface rounded-xl border-[0.5px] border-border-light shadow-card overflow-hidden shrink-0">
+        <div className="w-full xl:w-[320px] flex flex-col bg-surface rounded-xl border-[0.5px] border-border-light shadow-card overflow-hidden shrink-0 min-h-[320px]">
           <div className="p-4 border-b-[0.5px] border-border-light flex items-center justify-between">
             <div className="flex items-center gap-2">
               {replyMode === 'ai' ? (
