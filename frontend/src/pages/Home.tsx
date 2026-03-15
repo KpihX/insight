@@ -239,7 +239,7 @@ export default function Home() {
               ))
             ) : (
               <div className="text-[13px] text-text-3 leading-[1.45]">
-                No suggested actions right now.
+                Nothing needs to be surfaced here right now.
               </div>
             )}
           </div>
@@ -333,7 +333,7 @@ export default function Home() {
                     })
                   ) : (
                     <div className="rounded-lg border-[0.5px] border-dashed border-border-light bg-bg px-3 py-4 text-[11.5px] text-text-3">
-                      No scheduled item on this day.
+                      No highlighted item on this day.
                     </div>
                   )}
                 </div>
@@ -443,7 +443,7 @@ export default function Home() {
           if (!USE_REAL_API) {
             return (
               <div className="bg-brand-teal-bg rounded-xl border-[0.5px] border-[rgba(56,163,165,0.2)] p-4 px-[18px] shadow-card">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Next Up</div>
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Upcoming priority</div>
                 <div className="flex items-center gap-[10px] p-[10px] bg-[rgba(255,255,255,0.6)] rounded-[10px] border-[0.5px] border-[rgba(56,163,165,0.15)]">
                   <div className="w-8 h-8 rounded-lg bg-brand-teal flex items-center justify-center shrink-0">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1.6">
@@ -461,9 +461,9 @@ export default function Home() {
 
           return (
             <div className="bg-surface rounded-xl border-[0.5px] border-border-light p-4 px-[18px] shadow-card">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Next up</div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Upcoming priority</div>
               <div className="text-[13px] text-text-3 leading-[1.45]">
-                No live urgent item or meeting suggestion right now.
+                No urgent live item or validated meeting is competing for attention right now.
               </div>
             </div>
           );
@@ -508,8 +508,11 @@ export default function Home() {
         {/* Inbox preview */}
         <div className="bg-surface rounded-xl border-[0.5px] border-border-light p-4 px-[18px] shadow-card flex-1">
           <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Inbox preview</div>
-          
-          {recentItems.map((item, idx) => {
+          {recentItems.length === 0 ? (
+            <div className="rounded-lg border-[0.5px] border-dashed border-border-light bg-bg px-3 py-4 text-[11.5px] text-text-3">
+              No live inbox item to preview right now.
+            </div>
+          ) : recentItems.map((item, idx) => {
             let sourceClass = "bg-brand-blue-bg text-brand-blue-text";
             let sourceLabel = "@";
             if (item.category === 'moodle') {

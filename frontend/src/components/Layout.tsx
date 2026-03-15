@@ -15,7 +15,16 @@ export default function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
       <nav className="bg-surface border-b-[0.5px] border-border-strong flex items-center px-6 h-[52px] sticky top-0 z-10">
-        <span className="font-display text-[20px] text-text-main mr-8 tracking-[-0.3px]">insight</span>
+        <div className="flex items-center gap-3 mr-8 shrink-0">
+          <div className="w-8 h-8 rounded-[11px] border border-border-light bg-[linear-gradient(135deg,#f7f4ee_0%,#fcfaf5_100%)] flex items-center justify-center shadow-[0_8px_24px_rgba(31,41,55,0.06)]">
+            <svg viewBox="0 0 64 64" className="w-[18px] h-[18px]" fill="none" aria-hidden="true">
+              <rect x="10" y="9" width="15" height="46" rx="4" fill="#1A7F63" />
+              <rect x="31" y="9" width="12" height="46" rx="4" fill="#4B4ACF" />
+              <circle cx="48" cy="17" r="5" fill="#E7A21A" />
+            </svg>
+          </div>
+          <span className="font-display text-[20px] text-text-main tracking-[-0.3px]">insight</span>
+        </div>
         
         <div className="flex gap-[2px] flex-1">
           {navItems.map((item) => (
@@ -41,7 +50,7 @@ export default function Layout() {
             Teacher
           </span>
           <div className="w-[30px] h-[30px] rounded-full bg-brand-purple-bg text-brand-purple-text text-[12px] font-semibold flex items-center justify-center cursor-pointer">
-            MM
+            SL
           </div>
         </div>
       </nav>
@@ -49,6 +58,9 @@ export default function Layout() {
       <main className="flex-1 p-5 px-6 max-w-[1400px] mx-auto w-full">
         <Outlet />
       </main>
+      <div className="pb-4 text-center text-[10.5px] uppercase tracking-[0.22em] text-text-3">
+        lightweight by design
+      </div>
       <LiveEventToast />
       <SchedulePatchDialog />
       <LiveDebugPanel />
