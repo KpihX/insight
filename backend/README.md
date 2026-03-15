@@ -15,8 +15,8 @@ incoming source
 
 The visible frontend that consumes this backend is documented separately:
 
-- [README.md](/home/kpihx/Work/AI/HiBrown/insight/README.md)
-- [frontend/README.md](/home/kpihx/Work/AI/HiBrown/insight/frontend/README.md)
+- [README.md](../README.md)
+- [frontend/README.md](../frontend/README.md)
 
 ## What lives here
 
@@ -87,13 +87,13 @@ POST /dashboard/action
 
 The detailed contract, including `assist.calendar_patch`, is documented in:
 
-- [n8n/api.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/api.md)
+- [n8n/api.md](n8n/api.md)
 
 ## WhatsApp bridge
 
 The bridge entrypoint is:
 
-- [wa-bridge.js](/home/kpihx/Work/AI/HiBrown/insight/backend/wa-bridge.js)
+- [wa-bridge.js](wa-bridge.js)
 
 It uses Baileys and stores runtime auth state in:
 
@@ -161,9 +161,9 @@ The repository does not ship raw n8n export JSON files yet. Instead, it ships:
 
 Start here:
 
-- [n8n/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/README.md)
-- [n8n/workflows/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/workflows/README.md)
-- [n8n/nodes/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/README.md)
+- [n8n/README.md](n8n/README.md)
+- [n8n/workflows/README.md](n8n/workflows/README.md)
+- [n8n/nodes/README.md](n8n/nodes/README.md)
 
 ## Demo operations
 
@@ -214,10 +214,10 @@ WhatsApp sender alias kπx-labs
 
 ## Backend documentation map
 
-- [n8n/architecture.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/architecture.md) — end-to-end pipeline
-- [n8n/api.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/api.md) — published API contract
-- [n8n/schema_db.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/schema_db.md) — MongoDB model
-- [n8n/source.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/source.md) — input channels and demo inputs
-- [n8n/internal.md](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/internal.md) — operational notes and workflow inventory
-- [../CHANGELOG.md](/home/kpihx/Work/AI/HiBrown/insight/CHANGELOG.md) — project evolution log
-- [../TODO.md](/home/kpihx/Work/AI/HiBrown/insight/TODO.md) — project roadmap and pending work
+- [n8n/architecture.md](n8n/architecture.md) — end-to-end pipeline
+- [n8n/api.md](n8n/api.md) — published API contract
+- [n8n/schema_db.md](n8n/schema_db.md) — MongoDB model
+- [n8n/source.md](n8n/source.md) — input channels and demo inputs
+- [n8n/internal.md](n8n/internal.md) — operational notes and workflow inventory
+- [CHANGELOG.md](../CHANGELOG.md) — project evolution log
+- [TODO.md](../TODO.md) — project roadmap and pending work

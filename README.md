@@ -33,11 +33,11 @@ insight/
 
 ## Where to start
 
-- [README.md](/home/kpihx/Work/AI/HiBrown/insight/README.md) — monorepo overview and documentation map
-- [frontend/README.md](/home/kpihx/Work/AI/HiBrown/insight/frontend/README.md) — UI structure, local development, current API wiring, and demo behavior
-- [backend/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/README.md) — n8n runtime, published API, WhatsApp bridge, demo workflows, and local redeploy instructions
-- [CHANGELOG.md](/home/kpihx/Work/AI/HiBrown/insight/CHANGELOG.md) — project evolution log
-- [TODO.md](/home/kpihx/Work/AI/HiBrown/insight/TODO.md) — current roadmap
+- [README.md](README.md) — monorepo overview and documentation map
+- [frontend/README.md](frontend/README.md) — UI structure, local development, current API wiring, and demo behavior
+- [backend/README.md](backend/README.md) — n8n runtime, published API, WhatsApp bridge, demo workflows, and local redeploy instructions
+- [CHANGELOG.md](CHANGELOG.md) — project evolution log
+- [TODO.md](TODO.md) — current roadmap
 
 ## Project posture
 

@@ -4,8 +4,8 @@ This directory contains the visible teacher-facing prototype of `insight`.
 
 It is the interface that reviewers can see, while the n8n-first operational backend lives in:
 
-- [README.md](/home/kpihx/Work/AI/HiBrown/insight/README.md)
-- [backend/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/README.md)
+- [README.md](../README.md)
+- [backend/README.md](../backend/README.md)
 
 This repository now carries the local frontend source directly.
 
@@ -35,8 +35,8 @@ That is intentional for the hackathon demo flow.
 
 The frontend runtime knobs now live in:
 
-- [src/config/runtime.ts](/home/kpihx/Work/AI/HiBrown/insight/frontend/src/config/runtime.ts)
-- [.env.example](/home/kpihx/Work/AI/HiBrown/insight/frontend/.env.example)
+- [src/config/runtime.ts](src/config/runtime.ts)
+- [.env.example](.env.example)
 
 They centralize:
 
@@ -53,7 +53,7 @@ DEMO_CALENDAR_WEEK_START
 
 The API client lives in:
 
-- [src/services/api.ts](/home/kpihx/Work/AI/HiBrown/insight/frontend/src/services/api.ts)
+- [src/services/api.ts](src/services/api.ts)
 
 The frontend currently calls:
 
@@ -240,10 +240,10 @@ The frontend is now configured so deployment to Vercel is straightforward:
 
 Relevant files:
 
-- [package.json](/home/kpihx/Work/AI/HiBrown/insight/frontend/package.json)
-- [vite.config.ts](/home/kpihx/Work/AI/HiBrown/insight/frontend/vite.config.ts)
-- [vercel.json](/home/kpihx/Work/AI/HiBrown/insight/frontend/vercel.json)
-- [.env.example](/home/kpihx/Work/AI/HiBrown/insight/frontend/.env.example)
+- [package.json](package.json)
+- [vite.config.ts](vite.config.ts)
+- [vercel.json](vercel.json)
+- [.env.example](.env.example)
 
 Recommended Vercel setup:
 

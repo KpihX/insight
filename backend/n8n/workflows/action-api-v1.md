@@ -38,5 +38,5 @@ POST /dashboard/action
 
 | Node | Local source |
 |------|--------------|
-| `Validate Action` | [`../nodes/action-api/validate-action.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/action-api/validate-action.js) |
-| `Format Action Response` | [`../nodes/action-api/format-action-response.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/action-api/format-action-response.js) |
+| `Validate Action` | [`../nodes/action-api/validate-action.js`](../nodes/action-api/validate-action.js) |
+| `Format Action Response` | [`../nodes/action-api/format-action-response.js`](../nodes/action-api/format-action-response.js) |

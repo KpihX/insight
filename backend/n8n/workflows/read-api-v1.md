@@ -22,9 +22,9 @@ GET /dashboard/event -> MongoDB Find Detail -> Format Detail -> Respond
 
 | Node | Local source |
 |------|--------------|
-| `Format Brief` | [`../nodes/read-api/format-brief.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/read-api/format-brief.js) |
-| `Format Feed` | [`../nodes/read-api/format-feed.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/read-api/format-feed.js) |
-| `Format Detail` | [`../nodes/read-api/format-detail.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/read-api/format-detail.js) |
+| `Format Brief` | [`../nodes/read-api/format-brief.js`](../nodes/read-api/format-brief.js) |
+| `Format Feed` | [`../nodes/read-api/format-feed.js`](../nodes/read-api/format-feed.js) |
+| `Format Detail` | [`../nodes/read-api/format-detail.js`](../nodes/read-api/format-detail.js) |
 
 ## Operational note
 

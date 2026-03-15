@@ -29,13 +29,13 @@ pre-classify
 
 | Node | Local source |
 |------|--------------|
-| `normalize-email` | [`../nodes/ingestion/normalize-email.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/normalize-email.js) |
-| `normalize-wa` | [`../nodes/ingestion/normalize-wa.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/normalize-wa.js) |
-| `normalize-webhook` | [`../nodes/ingestion/normalize-webhook.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/normalize-webhook.js) |
-| `Pack Staff Directory` | [`../nodes/ingestion/pack-staff-directory.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/pack-staff-directory.js) |
-| `Pack Family Directory` | [`../nodes/ingestion/pack-family-directory.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/pack-family-directory.js) |
-| `pre-classify` | [`../nodes/ingestion/pre-classify.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/pre-classify.js) |
-| `Parse Classified Event` | [`../nodes/ingestion/parse-classified-event.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/parse-classified-event.js) |
+| `normalize-email` | [`../nodes/ingestion/normalize-email.js`](../nodes/ingestion/normalize-email.js) |
+| `normalize-wa` | [`../nodes/ingestion/normalize-wa.js`](../nodes/ingestion/normalize-wa.js) |
+| `normalize-webhook` | [`../nodes/ingestion/normalize-webhook.js`](../nodes/ingestion/normalize-webhook.js) |
+| `Pack Staff Directory` | [`../nodes/ingestion/pack-staff-directory.js`](../nodes/ingestion/pack-staff-directory.js) |
+| `Pack Family Directory` | [`../nodes/ingestion/pack-family-directory.js`](../nodes/ingestion/pack-family-directory.js) |
+| `pre-classify` | [`../nodes/ingestion/pre-classify.js`](../nodes/ingestion/pre-classify.js) |
+| `Parse Classified Event` | [`../nodes/ingestion/parse-classified-event.js`](../nodes/ingestion/parse-classified-event.js) |
 
 ## Demo-only input nodes
 
@@ -47,8 +47,8 @@ Manual triggers:
 
 Static event generators:
 
-- `email_json_record` -> [`../nodes/ingestion/email-json-record.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/email-json-record.js)
-- `msg_json_record` -> [`../nodes/ingestion/msg-json-record.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/msg-json-record.js)
+- `email_json_record` -> [`../nodes/ingestion/email-json-record.js`](../nodes/ingestion/email-json-record.js)
+- `msg_json_record` -> [`../nodes/ingestion/msg-json-record.js`](../nodes/ingestion/msg-json-record.js)
 
 These are only for deterministic demo runs. They are not part of the live source layer.
 

@@ -27,11 +27,11 @@ school_events    -> update key: original_id
 
 The local JSON seed files are:
 
-- [`../data/seed/staff_directory.json`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/data/seed/staff_directory.json)
-- [`../data/seed/family_directory.json`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/data/seed/family_directory.json)
+- [`../data/seed/staff_directory.json`](../data/seed/staff_directory.json)
+- [`../data/seed/family_directory.json`](../data/seed/family_directory.json)
 
-The workflow also contains an inline `school_events_seed` code node for the baseline demo events documented in [`../internal.md`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/internal.md).
+The workflow also contains an inline `school_events_seed` code node for the baseline demo events documented in [`../internal.md`](../internal.md).
 
 Local source:
 
-- [`../nodes/demo-seed/school-events-seed.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/demo-seed/school-events-seed.js)
+- [`../nodes/demo-seed/school-events-seed.js`](../nodes/demo-seed/school-events-seed.js)

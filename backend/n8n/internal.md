@@ -27,14 +27,14 @@ These stay manual in hackathon mode:
 
 ## Local source mapping
 
-Inline workflow logic is now mirrored under [`nodes/`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes):
+Inline workflow logic is now mirrored under [`nodes/`](nodes/):
 
-- [`nodes/ingestion/pack-staff-directory.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/pack-staff-directory.js)
-- [`nodes/ingestion/pack-family-directory.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/pack-family-directory.js)
-- [`nodes/ingestion/email-json-record.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/email-json-record.js)
-- [`nodes/ingestion/msg-json-record.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/ingestion/msg-json-record.js)
-- [`nodes/demo-seed/school-events-seed.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/demo-seed/school-events-seed.js)
-- [`nodes/vector/default-data-loader-document.js`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/vector/default-data-loader-document.js)
+- [`nodes/ingestion/pack-staff-directory.js`](nodes/ingestion/pack-staff-directory.js)
+- [`nodes/ingestion/pack-family-directory.js`](nodes/ingestion/pack-family-directory.js)
+- [`nodes/ingestion/email-json-record.js`](nodes/ingestion/email-json-record.js)
+- [`nodes/ingestion/msg-json-record.js`](nodes/ingestion/msg-json-record.js)
+- [`nodes/demo-seed/school-events-seed.js`](nodes/demo-seed/school-events-seed.js)
+- [`nodes/vector/default-data-loader-document.js`](nodes/vector/default-data-loader-document.js)
 
 ### Default Data Loader document payload
 

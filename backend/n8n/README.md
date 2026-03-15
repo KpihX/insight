@@ -50,8 +50,8 @@ n8n/
 
 ## Where to start
 
-1. [`architecture.md`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/architecture.md) for the end-to-end flow
-2. [`api.md`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/api.md) for the public contract
-3. [`schema_db.md`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/schema_db.md) for the persistence model
-4. [`workflows/`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/workflows) for per-workflow blueprints
-5. [`nodes/README.md`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes/README.md) for local code-node mapping
+1. [`architecture.md`](architecture.md) for the end-to-end flow
+2. [`api.md`](api.md) for the public contract
+3. [`schema_db.md`](schema_db.md) for the persistence model
+4. [`workflows/`](workflows/) for per-workflow blueprints
+5. [`nodes/README.md`](nodes/README.md) for local code-node mapping

@@ -24,4 +24,4 @@ https://nextgen-n8n.westeurope.cloudapp.azure.com
 | `insight — Demo Seed v1.0` | `YYGMK0Nrstykk4Ok` | manual |
 | `insight — Demo Reset v1.0` | `t1Bk12b6l6zRuLot` | manual |
 
-Use the matching markdown blueprint in this directory together with the local Code node files under [`n8n/nodes/`](/home/kpihx/Work/AI/HiBrown/insight/backend/n8n/nodes).
+Use the matching markdown blueprint in this directory together with the local Code node files under [`n8n/nodes/`](../nodes/).
