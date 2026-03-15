@@ -5,6 +5,7 @@ export interface CalendarPatch {
   start_time?: string;
   end_time?: string;
   title?: string;
+  location?: string;
 }
 
 export interface EventAssist {

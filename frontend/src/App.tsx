@@ -10,11 +10,13 @@ import Inbox from './pages/Inbox';
 import Tasks from './pages/Tasks';
 import Calendar from './pages/Calendar';
 import { TasksProvider } from './contexts/TasksContext';
+import { SchedulePatchProvider } from './contexts/SchedulePatchContext';
 
 export default function App() {
   return (
     <TasksProvider>
-      <BrowserRouter>
+      <SchedulePatchProvider>
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -24,7 +26,8 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
+      </SchedulePatchProvider>
     </TasksProvider>
   );
 }

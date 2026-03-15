@@ -1,3 +1,6 @@
+const now = new Date();
+const runId = now.toISOString().replace(/[-:.TZ]/g, '');
+
 return [
   {
     json: {
@@ -32,10 +35,10 @@ return [
         text: "Emily Carter <emily.carter@example.com>",
         html: "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
       },
-      date: "2026-03-14T11:30:00Z",
+      date: now.toISOString(),
       text: "Hello Sarah, please attend a mandatory administrative meeting on Monday, March 16, 2026 from 2:00 PM to 3:00 PM in Room 204. We will review the teacher dashboard to-do workflow and the updated attendance escalation process. Please be on time.",
       html: "<body><p>Hello Sarah, please attend a mandatory administrative meeting on Monday, March 16, 2026 from 2:00 PM to 3:00 PM in Room 204.</p><p>We will review the teacher dashboard to-do workflow and the updated attendance escalation process. Please be on time.</p></body>",
-      messageId: "<DEMO-EMAIL-STAFF1-MEETING@mail.example.com>",
+      messageId: `<DEMO-EMAIL-STAFF1-MEETING-${runId}@mail.example.com>`,
       headerLines: [
         { key: "mime-version", line: "MIME-Version: 1.0" },
         { key: "content-type", line: "Content-Type: text/html; charset=UTF-8" },

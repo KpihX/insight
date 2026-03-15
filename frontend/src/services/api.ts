@@ -305,7 +305,7 @@ export async function getEventDetail(id: string): Promise<EventDetail> {
     throw new Error('Event not found in mock data');
   }
 
-  const res = await fetch(`${API_BASE_URL}/dashboard/event?id=${id}`);
+  const res = await fetch(`${API_BASE_URL}/dashboard/event?id=${encodeURIComponent(id)}`);
   if (!res.ok) throw new Error('Failed to fetch event detail');
   return res.json();
 }

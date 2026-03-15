@@ -7,12 +7,16 @@ import {
   DEFAULT_DASHBOARD_ROLE,
   DEFAULT_DASHBOARD_STAFF_ID,
   REFRESH_INTERVAL_MS,
+  USE_REAL_API,
 } from '../config/runtime';
 import { computeWellbeingMetrics } from '../utils/wellbeing';
+import { buildHomeScheduleDays, formatScheduleTimeRange, getNextNotableScheduleOccurrence } from '../data/schedule';
+import { useSchedulePatch } from '../contexts/SchedulePatchContext';
 
 export default function Home() {
   const navigate = useNavigate();
   const { tasks: actionItems, toggleTaskDone, doneTasks } = useTasks();
+  const { appliedPatches } = useSchedulePatch();
   const [brief, setBrief] = useState<DashboardBrief | null>(null);
   const [recentItems, setRecentItems] = useState<DashboardFeedItem[]>([]);
   const [sortMode, setSortMode] = useState<'urgency' | 'newest' | 'theme'>('urgency');
@@ -22,16 +26,27 @@ export default function Home() {
     [actionItems, doneTasks, brief?.stats.deadlines]
   );
   const pendingActionItems = wellbeing.pendingActionItems;
-  const highlightedCalendarPatch = [...recentItems, ...pendingActionItems]
-    .map(item => item.assist?.calendar_patch)
-    .find(patch => patch?.should_render);
-
-  const scheduleHighlight = highlightedCalendarPatch?.should_render
-    ? `${highlightedCalendarPatch.title}${highlightedCalendarPatch.start_time ? ` at ${highlightedCalendarPatch.start_time}` : ''}`
-    : null;
 
   const suggestedActions = pendingActionItems.slice(0, 2);
+  const summarySuggestions = USE_REAL_API
+    ? suggestedActions
+    : (suggestedActions.length > 0 ? suggestedActions : recentItems.slice(0, 2));
   const refreshSeconds = Math.round(REFRESH_INTERVAL_MS / 1000);
+  const homeScheduleDays = useMemo(
+    () => buildHomeScheduleDays(new Date(), appliedPatches),
+    [appliedPatches]
+  );
+  const nextNotableSchedule = useMemo(
+    () => getNextNotableScheduleOccurrence(homeScheduleDays),
+    [homeScheduleDays]
+  );
+  const latestAppliedPatch = useMemo(
+    () => appliedPatches.slice().sort((left, right) => right.savedAt.localeCompare(left.savedAt))[0],
+    [appliedPatches]
+  );
+  const scheduleHighlight = latestAppliedPatch
+    ? `${latestAppliedPatch.title} at ${latestAppliedPatch.start_time} - ${latestAppliedPatch.end_time}`
+    : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -105,6 +120,14 @@ export default function Home() {
   };
 
   const renderTodoList = () => {
+    if (actionItems.length === 0) {
+      return (
+        <div className="rounded-[10px] border-[0.5px] border-dashed border-border-strong bg-bg p-4 text-[13px] text-text-3">
+          No action-required items right now.
+        </div>
+      );
+    }
+
     if (sortMode === 'urgency') {
       const urgent = actionItems.filter(i => i.urgent);
       const important = actionItems.filter(i => !i.urgent && i.important);
@@ -187,7 +210,9 @@ export default function Home() {
             {brief?.greeting || "Good morning."}
           </div>
           
-          <div className="text-[10.5px] font-bold tracking-[0.07em] uppercase text-text-3 mb-[6px]">Today</div>
+          <div className="text-[10.5px] font-bold tracking-[0.07em] uppercase text-text-3 mb-[6px]">
+            {USE_REAL_API ? 'Overview' : 'Today'}
+          </div>
           <div className="flex flex-col gap-[5px]">
             {scheduleHighlight && (
               <div className="flex items-start gap-2 text-[13px] text-text-2 leading-[1.45]">
@@ -205,12 +230,18 @@ export default function Home() {
 
           <div className="text-[10.5px] font-bold tracking-[0.07em] uppercase text-text-3 mb-[6px] mt-3">Suggested actions</div>
           <div className="flex flex-col gap-[5px]">
-            {(suggestedActions.length > 0 ? suggestedActions : recentItems.slice(0, 2)).map(item => (
-              <div key={item.id} className="flex items-start gap-2 text-[13px] text-text-main leading-[1.45]">
-                <span className="text-[12px] text-brand-teal mt-[1px] shrink-0 font-semibold">→</span>
-                {item.title}
+            {summarySuggestions.length > 0 ? (
+              summarySuggestions.map(item => (
+                <div key={item.id} className="flex items-start gap-2 text-[13px] text-text-main leading-[1.45]">
+                  <span className="text-[12px] text-brand-teal mt-[1px] shrink-0 font-semibold">→</span>
+                  {item.title}
+                </div>
+              ))
+            ) : (
+              <div className="text-[13px] text-text-3 leading-[1.45]">
+                No suggested actions right now.
               </div>
-            ))}
+            )}
           </div>
 
           <div className="text-[10.5px] text-text-3 flex items-center gap-[5px] mt-3 pt-[10px] border-t-[0.5px] border-border-light">
@@ -227,11 +258,19 @@ export default function Home() {
               onClick={() =>
                 navigate(
                   '/calendar',
-                  highlightedCalendarPatch?.should_render
+                  nextNotableSchedule
                     ? {
                         state: {
-                          calendarPatch: highlightedCalendarPatch,
-                          sourceEventTitle: highlightedCalendarPatch.title,
+                          calendarPatch: {
+                            should_render: true,
+                            patch_type: nextNotableSchedule.event.type,
+                            date: nextNotableSchedule.date.toISOString().slice(0, 10),
+                            start_time: nextNotableSchedule.event.start % 1 === 0 ? `${String(Math.floor(nextNotableSchedule.event.start)).padStart(2, '0')}:00` : `${String(Math.floor(nextNotableSchedule.event.start)).padStart(2, '0')}:30`,
+                            end_time: nextNotableSchedule.event.end % 1 === 0 ? `${String(Math.floor(nextNotableSchedule.event.end)).padStart(2, '0')}:00` : `${String(Math.floor(nextNotableSchedule.event.end)).padStart(2, '0')}:30`,
+                            title: nextNotableSchedule.event.title,
+                            location: nextNotableSchedule.event.location,
+                          },
+                          sourceEventTitle: nextNotableSchedule.event.title,
                           sourceSender: 'Insight Assist',
                         },
                       }
@@ -253,77 +292,53 @@ export default function Home() {
             <div className="flex items-center gap-[5px] text-[11px] text-text-3">
               <div className="w-2 h-2 rounded-[2px] shrink-0 bg-brand-red" /> New
             </div>
+            <div className="flex items-center gap-[5px] text-[11px] text-text-3">
+              <div className="w-2 h-2 rounded-[2px] shrink-0 bg-[#E7A21A]" /> Insight overlay
+            </div>
           </div>
 
-          <div className="grid grid-cols-[38px_1fr_1fr] gap-x-2">
-            <div className="text-[11px] font-bold tracking-[0.07em] uppercase text-text-3 pb-2 border-b-[0.5px] border-border-light mb-1" />
-            <div className="text-[11px] font-bold tracking-[0.07em] uppercase text-text-3 pb-2 border-b-[0.5px] border-border-light mb-1">Today · Fri 14</div>
-            <div className="text-[11px] font-bold tracking-[0.07em] uppercase text-text-3 pb-2 border-b-[0.5px] border-border-light mb-1">Tomorrow · Sat 15</div>
+          <div className="grid grid-cols-2 gap-3">
+            {homeScheduleDays.map((day) => (
+              <div key={day.label} className="min-w-0">
+                <div className="text-[11px] font-bold tracking-[0.07em] uppercase text-text-3 pb-2 border-b-[0.5px] border-border-light mb-2">
+                  {day.label}
+                </div>
+                <div className="flex flex-col gap-2">
+                  {day.events.length > 0 ? (
+                    day.events.map((event) => {
+                      const cardClass = event.variant === 'overlay'
+                        ? 'bg-[rgba(244,181,63,0.24)] border-[#E7A21A] text-[#8A5A00]'
+                        : event.type === 'class'
+                          ? 'bg-brand-teal-bg border-brand-teal text-brand-teal-text'
+                          : event.type === 'meeting'
+                            ? 'bg-brand-purple-bg border-brand-purple text-brand-purple-text'
+                            : 'bg-brand-red-bg border-brand-red text-brand-red-text';
 
-            {/* 08:15 */}
-            <div className="text-[10px] text-text-3 h-[52px] flex items-start justify-end pr-[7px] pt-[6px] border-r-[0.5px] border-border-light">08:15</div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-teal-bg border-brand-teal">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-teal-text">Mathematics 1A</div>
-                <div className="text-[10px] opacity-75 text-brand-teal-text">08:15 – 09:00</div>
+                      return (
+                        <div
+                          key={event.id}
+                          className={`rounded-lg p-[6px_8px] flex flex-col justify-center gap-[2px] border-l-4 ${cardClass}`}
+                        >
+                          <div className="text-[10px] font-medium opacity-80">
+                            {formatScheduleTimeRange(event.start, event.end)}
+                          </div>
+                          <div className="text-[11.5px] font-semibold leading-[1.25]">
+                            {event.title}
+                          </div>
+                          <div className="text-[10px] opacity-75">
+                            {event.location || (event.variant === 'overlay' ? 'Insight-generated meeting' : 'TBA')}
+                          </div>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div className="rounded-lg border-[0.5px] border-dashed border-border-light bg-bg px-3 py-4 text-[11.5px] text-text-3">
+                      No scheduled item on this day.
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-teal-bg border-brand-teal">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-teal-text">Mathematics 3A</div>
-                <div className="text-[10px] opacity-75 text-brand-teal-text">08:15 – 09:00</div>
-              </div>
-            </div>
-
-            {/* 09:10 */}
-            <div className="text-[10px] text-text-3 h-[52px] flex items-start justify-end pr-[7px] pt-[6px] border-r-[0.5px] border-border-light">09:10</div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px] bg-transparent" />
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-teal-bg border-brand-teal">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-teal-text">Biology 1B</div>
-                <div className="text-[10px] opacity-75 text-brand-teal-text">09:10 – 09:55</div>
-              </div>
-            </div>
-
-            {/* 10:00 */}
-            <div className="text-[10px] text-text-3 h-[52px] flex items-start justify-end pr-[7px] pt-[6px] border-r-[0.5px] border-border-light">10:00</div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-purple-bg border-brand-purple">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-purple-text">Staff meeting</div>
-                <div className="text-[10px] opacity-75 text-brand-purple-text">10:00 – 10:45</div>
-              </div>
-            </div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px] bg-transparent" />
-
-            {/* 11:00 */}
-            <div className="text-[10px] text-text-3 h-[52px] flex items-start justify-end pr-[7px] pt-[6px] border-r-[0.5px] border-border-light">11:00</div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-teal-bg border-brand-teal">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-teal-text">Physics 2B</div>
-                <div className="text-[10px] opacity-75 text-brand-teal-text">11:00 – 11:45</div>
-              </div>
-            </div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px] bg-transparent" />
-
-            {/* 13:00 */}
-            <div className="text-[10px] text-text-3 h-[52px] flex items-start justify-end pr-[7px] pt-[6px] border-r-[0.5px] border-border-light">13:00</div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px] bg-transparent" />
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-purple-bg border-brand-purple">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-purple-text">Curriculum review</div>
-                <div className="text-[10px] opacity-75 text-brand-purple-text">13:00 – 14:30</div>
-              </div>
-            </div>
-
-            {/* 14:30 */}
-            <div className="text-[10px] text-text-3 h-[52px] flex items-start justify-end pr-[7px] pt-[6px] border-r-[0.5px] border-border-light">14:30</div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px]">
-              <div className="w-full h-[44px] rounded-lg p-[5px_8px] flex flex-col justify-center gap-[1px] border-l-4 bg-brand-red-bg border-brand-red">
-                <div className="text-[11.5px] font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-brand-red-text">Parent call — Müller</div>
-                <div className="text-[10px] opacity-75 text-brand-red-text">14:30 – 15:00</div>
-              </div>
-            </div>
-            <div className="h-[52px] border-b-[0.5px] border-dashed border-border-light flex items-center py-[3px] bg-transparent" />
+            ))}
           </div>
         </div>
       </div>
@@ -362,12 +377,14 @@ export default function Home() {
             {renderTodoList()}
           </div>
 
-          <div className="flex items-center gap-2 p-[8px_10px] rounded-[10px] border-[0.5px] border-dashed border-border-strong text-text-3 text-[13px] cursor-pointer transition-colors duration-150 mt-[6px] hover:bg-bg hover:text-text-2">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/>
-            </svg>
-            Add task
-          </div>
+          {!USE_REAL_API && (
+            <div className="flex items-center gap-2 p-[8px_10px] rounded-[10px] border-[0.5px] border-dashed border-border-strong text-text-3 text-[13px] cursor-pointer transition-colors duration-150 mt-[6px] hover:bg-bg hover:text-text-2">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/>
+              </svg>
+              Add task
+            </div>
+          )}
         </div>
       </div>
 
@@ -402,10 +419,10 @@ export default function Home() {
             );
           }
           
-          if (highlightedCalendarPatch?.should_render) {
+          if (nextNotableSchedule) {
             return (
               <div className="bg-brand-purple-bg rounded-xl border-[0.5px] border-[rgba(83,74,183,0.2)] p-4 px-[18px] shadow-card">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Upcoming Meeting</div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Upcoming Priority</div>
                 <div className="flex items-center gap-[10px] p-[10px] bg-[rgba(255,255,255,0.6)] rounded-[10px] border-[0.5px] border-[rgba(83,74,183,0.15)]">
                   <div className="w-8 h-8 rounded-lg bg-brand-purple flex items-center justify-center shrink-0">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1.6">
@@ -413,9 +430,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-[13px] font-semibold text-brand-purple-text">{highlightedCalendarPatch.title}</div>
+                    <div className="text-[13px] font-semibold text-brand-purple-text">{nextNotableSchedule.event.title}</div>
                     <div className="text-[11.5px] text-brand-purple-text opacity-80">
-                      {highlightedCalendarPatch.date} · {highlightedCalendarPatch.start_time} – {highlightedCalendarPatch.end_time}
+                      {nextNotableSchedule.date.toISOString().slice(0, 10)} · {formatScheduleTimeRange(nextNotableSchedule.event.start, nextNotableSchedule.event.end)}
                     </div>
                   </div>
                 </div>
@@ -423,19 +440,30 @@ export default function Home() {
             );
           }
 
+          if (!USE_REAL_API) {
+            return (
+              <div className="bg-brand-teal-bg rounded-xl border-[0.5px] border-[rgba(56,163,165,0.2)] p-4 px-[18px] shadow-card">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Next Up</div>
+                <div className="flex items-center gap-[10px] p-[10px] bg-[rgba(255,255,255,0.6)] rounded-[10px] border-[0.5px] border-[rgba(56,163,165,0.15)]">
+                  <div className="w-8 h-8 rounded-lg bg-brand-teal flex items-center justify-center shrink-0">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1.6">
+                      <circle cx="8" cy="8" r="6"/><path d="M8 4.5v4l2.5 1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-semibold text-brand-teal-text">Mathematics 1A</div>
+                    <div className="text-[11.5px] text-brand-teal-text opacity-80">Room 101 · 08:15 – 09:00</div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
           return (
-            <div className="bg-brand-teal-bg rounded-xl border-[0.5px] border-[rgba(56,163,165,0.2)] p-4 px-[18px] shadow-card">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Next Up</div>
-              <div className="flex items-center gap-[10px] p-[10px] bg-[rgba(255,255,255,0.6)] rounded-[10px] border-[0.5px] border-[rgba(56,163,165,0.15)]">
-                <div className="w-8 h-8 rounded-lg bg-brand-teal flex items-center justify-center shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1.6">
-                    <circle cx="8" cy="8" r="6"/><path d="M8 4.5v4l2.5 1.5" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-[13px] font-semibold text-brand-teal-text">Mathematics 1A</div>
-                  <div className="text-[11.5px] text-brand-teal-text opacity-80">Room 101 · 08:15 – 09:00</div>
-                </div>
+            <div className="bg-surface rounded-xl border-[0.5px] border-border-light p-4 px-[18px] shadow-card">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.06em] text-text-3 mb-3">Next up</div>
+              <div className="text-[13px] text-text-3 leading-[1.45]">
+                No live urgent item or meeting suggestion right now.
               </div>
             </div>
           );

@@ -5,6 +5,7 @@ import {
   DEFAULT_DASHBOARD_ROLE,
   DEFAULT_DASHBOARD_STAFF_ID,
   REFRESH_INTERVAL_MS,
+  USE_REAL_API,
 } from '../config/runtime';
 
 interface TasksContextType {
@@ -32,15 +33,16 @@ export function TasksProvider({ children }: { children: React.ReactNode }) {
         );
         const fetchedActionItems = feed.items || [];
         
-        const allActionItems = [
-          ...fetchedActionItems,
-          { id: 't6', category: 'class', urgent: false, important: false, action_required: true, title: 'Prepare quiz for 1A — chapter 7', summary: '', sender_label: 'Class', time_label: 'Due: Mon 17 Mar', status: 'pending' },
-          { id: 't7', category: 'class', urgent: false, important: false, action_required: true, title: 'Update Moodle grades for 2B', summary: '', sender_label: 'Class', time_label: 'Due: Mon 17 Mar', status: 'pending' },
-          { id: 't8', category: 'admin', urgent: false, important: false, action_required: true, title: 'Order classroom supplies', summary: '', sender_label: 'Admin', time_label: 'Due: next week', status: 'pending' }
-        ];
-        
-        // Only update if different to avoid overriding manual tasks?
-        // Actually, we should merge them. For simplicity, let's just prepend manual tasks.
+        const mockOnlyTasks: DashboardFeedItem[] = USE_REAL_API
+          ? []
+          : [
+              { id: 't6', category: 'class', urgent: false, important: false, action_required: true, title: 'Prepare quiz for 1A — chapter 7', summary: '', sender_label: 'Class', time_label: 'Due: Mon 17 Mar', status: 'pending' },
+              { id: 't7', category: 'class', urgent: false, important: false, action_required: true, title: 'Update Moodle grades for 2B', summary: '', sender_label: 'Class', time_label: 'Due: Mon 17 Mar', status: 'pending' },
+              { id: 't8', category: 'admin', urgent: false, important: false, action_required: true, title: 'Order classroom supplies', summary: '', sender_label: 'Admin', time_label: 'Due: next week', status: 'pending' },
+            ];
+
+        const allActionItems = [...fetchedActionItems, ...mockOnlyTasks];
+
         setTasks(prev => {
           const manualTasks = prev.filter(t => t.id.startsWith('manual_'));
           return [...manualTasks, ...allActionItems as DashboardFeedItem[]];
