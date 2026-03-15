@@ -29,9 +29,17 @@ export interface AppliedCalendarPatch {
   savedAt: string;
 }
 
+export interface LiveEventToast {
+  eventId: string;
+  title: string;
+  summary: string;
+  senderLabel?: string;
+}
+
 interface SchedulePatchContextType {
   currentSuggestion: SuggestedCalendarPatch | null;
   appliedPatches: AppliedCalendarPatch[];
+  currentToast: LiveEventToast | null;
   debugEntries: string[];
   dismissSuggestion: () => void;
   applySuggestion: (patch: AppliedCalendarPatch) => void;
@@ -104,6 +112,8 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
   const [currentSuggestion, setCurrentSuggestion] = useState<SuggestedCalendarPatch | null>(null);
   const [appliedPatches, setAppliedPatches] = useState<AppliedCalendarPatch[]>(() => readArrayFromStorage(APPLIED_PATCHES_STORAGE_KEY));
   const [dismissedSignatures, setDismissedSignatures] = useState<string[]>(() => readArrayFromStorage(DISMISSED_PATCHES_STORAGE_KEY));
+  const [toastQueue, setToastQueue] = useState<LiveEventToast[]>([]);
+  const [currentToast, setCurrentToast] = useState<LiveEventToast | null>(null);
   const [debugEntries, setDebugEntries] = useState<string[]>(() =>
     typeof window !== 'undefined' ? window.__insightLiveDebug__ ?? [] : []
   );
@@ -112,6 +122,8 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
   const appliedPatchesRef = useRef<AppliedCalendarPatch[]>(appliedPatches);
   const dismissedSignaturesRef = useRef<string[]>(dismissedSignatures);
   const currentSuggestionRef = useRef<SuggestedCalendarPatch | null>(currentSuggestion);
+  const currentToastRef = useRef<LiveEventToast | null>(currentToast);
+  const toastQueueRef = useRef<LiveEventToast[]>(toastQueue);
   const pollInFlight = useRef(false);
 
   useEffect(() => {
@@ -125,6 +137,14 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
   useEffect(() => {
     currentSuggestionRef.current = currentSuggestion;
   }, [currentSuggestion]);
+
+  useEffect(() => {
+    currentToastRef.current = currentToast;
+  }, [currentToast]);
+
+  useEffect(() => {
+    toastQueueRef.current = toastQueue;
+  }, [toastQueue]);
 
   useEffect(() => {
     if (!DEBUG_LIVE_EVENTS || typeof window === 'undefined') return;
@@ -145,6 +165,24 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
       window.localStorage.setItem(DISMISSED_PATCHES_STORAGE_KEY, JSON.stringify(dismissedSignatures));
     }
   }, [dismissedSignatures]);
+
+  useEffect(() => {
+    if (currentToast || toastQueue.length === 0) return;
+
+    const [nextToast, ...rest] = toastQueue;
+    setCurrentToast(nextToast);
+    setToastQueue(rest);
+  }, [currentToast, toastQueue]);
+
+  useEffect(() => {
+    if (!currentToast) return;
+
+    const timeout = window.setTimeout(() => {
+      setCurrentToast(null);
+    }, 8400);
+
+    return () => window.clearTimeout(timeout);
+  }, [currentToast]);
 
   useEffect(() => {
     if (!USE_REAL_API) return;
@@ -267,6 +305,27 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
                 });
                 setCurrentSuggestion(buildSuggestion(item.id, detail));
               }
+            } else {
+              const alreadyQueued =
+                currentToastRef.current?.eventId === item.id ||
+                toastQueueRef.current.some((entry) => entry.eventId === item.id);
+
+              debugLiveEvents('non-time-event decision', {
+                id: item.id,
+                alreadyQueued,
+              });
+
+              if (!alreadyQueued) {
+                const toast = {
+                  eventId: item.id,
+                  title: detail.title,
+                  summary: detail.summary,
+                  senderLabel: item.sender_label,
+                };
+
+                debugLiveEvents('queueing live toast', toast);
+                setToastQueue((previous) => [...previous, toast]);
+              }
             }
 
             seenEventIds.current.add(item.id);
@@ -299,6 +358,7 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
     () => ({
       currentSuggestion,
       appliedPatches,
+      currentToast,
       debugEntries,
       dismissSuggestion: () => {
         if (!currentSuggestion) return;
@@ -318,7 +378,7 @@ export function SchedulePatchProvider({ children }: { children: React.ReactNode 
         setCurrentSuggestion(null);
       },
     }),
-    [appliedPatches, currentSuggestion, debugEntries]
+    [appliedPatches, currentSuggestion, currentToast, debugEntries]
   );
 
   return <SchedulePatchContext.Provider value={contextValue}>{children}</SchedulePatchContext.Provider>;

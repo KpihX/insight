@@ -4,40 +4,40 @@ const runId = now.toISOString().replace(/[-:.TZ]/g, '');
 return [
   {
     json: {
-      subject: "Mandatory administrative meeting on Monday, March 16 at 2:00 PM",
+      subject: "Parent meeting scheduled for Tim Doe on Tuesday, March 17 at 4:00 PM",
       from: {
         value: [
           {
-            address: "david.brown@example.com",
+            address: "kapoivha@gmail.com",
             name: "David Brown",
           },
         ],
-        text: "David Brown <david.brown@example.com>",
-        html: "<span class=\"peer\">David Brown &lt;<a href=\"mailto:david.brown@example.com\">david.brown@example.com</a>&gt;</span>",
+        text: "David Brown <kapoivha@gmail.com>",
+        html: "<span class=\"peer\">David Brown &lt;<a href=\"mailto:kapoivha@gmail.com\">kapoivha@gmail.com</a>&gt;</span>",
       },
       to: {
         value: [
           {
-            address: "sarah.lee@example.com",
+            address: "nextgenproject373@gmail.com",
             name: "Sarah Lee",
           },
         ],
-        text: "Sarah Lee <sarah.lee@example.com>",
-        html: "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:sarah.lee@example.com\">sarah.lee@example.com</a>&gt;</span>",
+        text: "Sarah Lee <nextgenproject373@gmail.com>",
+        html: "<span class=\"peer\">Sarah Lee &lt;<a href=\"mailto:nextgenproject373@gmail.com\">nextgenproject373@gmail.com</a>&gt;</span>",
       },
       cc: {
         value: [
           {
-            address: "emily.carter@example.com",
-            name: "Emily Carter",
+            address: "jane.doe@example.com",
+            name: "Jane Doe",
           },
         ],
-        text: "Emily Carter <emily.carter@example.com>",
-        html: "<span class=\"peer\">Emily Carter &lt;<a href=\"mailto:emily.carter@example.com\">emily.carter@example.com</a>&gt;</span>",
+        text: "Jane Doe <jane.doe@example.com>",
+        html: "<span class=\"peer\">Jane Doe &lt;<a href=\"mailto:jane.doe@example.com\">jane.doe@example.com</a>&gt;</span>",
       },
       date: now.toISOString(),
-      text: "Hello Sarah, please attend a mandatory administrative meeting on Monday, March 16, 2026 from 2:00 PM to 3:00 PM in Room 204. We will review the teacher dashboard to-do workflow and the updated attendance escalation process. Please be on time.",
-      html: "<body><p>Hello Sarah, please attend a mandatory administrative meeting on Monday, March 16, 2026 from 2:00 PM to 3:00 PM in Room 204.</p><p>We will review the teacher dashboard to-do workflow and the updated attendance escalation process. Please be on time.</p></body>",
+      text: "Hello Sarah, Jane Doe has asked for a parent meeting regarding Tim Doe. I have scheduled it for Tuesday, March 17, 2026 from 4:00 PM to 5:00 PM in Guidance Room B12. Please keep that slot available and bring Tim Doe's attendance notes.",
+      html: "<body><p>Hello Sarah, Jane Doe has asked for a parent meeting regarding Tim Doe.</p><p>I have scheduled it for Tuesday, March 17, 2026 from 4:00 PM to 5:00 PM in Guidance Room B12.</p><p>Please keep that slot available and bring Tim Doe's attendance notes.</p></body>",
       messageId: `<DEMO-EMAIL-STAFF1-MEETING-${runId}@mail.example.com>`,
       headerLines: [
         { key: "mime-version", line: "MIME-Version: 1.0" },

@@ -45,9 +45,16 @@ export default function SchedulePatchDialog() {
           </div>
         </div>
 
-        <div className="px-6 py-5 grid gap-5">
-          <div className="rounded-2xl border border-border-light bg-surface2 p-4">
-            <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-text-3 mb-2">Detected by backend</div>
+	        <div className="px-6 py-5 grid gap-5">
+	          <div className="rounded-2xl border border-[rgba(15,110,86,0.14)] bg-[rgba(225,245,238,0.75)] p-4">
+	            <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-brand-teal-text mb-2">AI-provided summary</div>
+	            <div className="text-[13px] text-brand-teal-text leading-[1.6]">
+	              {currentSuggestion.summary}
+	            </div>
+	          </div>
+
+	          <div className="rounded-2xl border border-border-light bg-surface2 p-4">
+	            <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-text-3 mb-2">Detected by backend</div>
             <div className="text-[13px] text-text-main leading-[1.6]">
               <div><span className="font-semibold">Event:</span> {currentSuggestion.title}</div>
               {currentSuggestion.senderName && (

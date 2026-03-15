@@ -54,5 +54,9 @@ These are only for deterministic demo runs. They are not part of the live source
 
 Current demo scenarios:
 
-- `email_json_record`: an administrative email from David Brown to Sarah Lee announcing a mandatory meeting on Monday, March 16, 2026 from 2:00 PM to 3:00 PM.
+- `email_json_record`: an administrative email from David Brown to Sarah Lee confirming a parent meeting for Tim Doe on Tuesday, March 17, 2026 from 4:00 PM to 5:00 PM.
 - `msg_json_record`: a parent WhatsApp-style message from Jane Doe reporting Tim Doe absent for the day.
+
+For live WhatsApp tests, `David Brown` also exposes the alias `kπx-labs` in `staff_directory`, so the `pre-classify` step can resolve the sender from `fromName` even when the WhatsApp contact identifier is opaque.
+
+For direct WhatsApp messages without explicit receiver metadata, the model can also return `inferred_receivers`. The prompt is enriched with candidate staff entries from `staff_directory` so the model can pick exact canonical names. `Parse Classified Event` keeps the same final storage contract by writing only `receivers`, using explicit values first and inferred receiver tokens only as a fallback.

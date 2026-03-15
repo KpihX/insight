@@ -29,8 +29,18 @@ staff_id
   "staff_id": "staff_1",
   "name": "Sarah Lee",
   "role": "teacher",
-  "contacts": ["sarah.lee@example.com"],
+  "contacts": ["sarah.lee@example.com", "nextgenproject373@gmail.com"],
   "aliases": ["Sarah Lee", "Lee"]
+}
+```
+
+```json
+{
+  "staff_id": "staff_4",
+  "name": "David Brown",
+  "role": "admin",
+  "contacts": ["david.brown@example.com", "kapoivha@gmail.com"],
+  "aliases": ["David Brown", "Brown", "kπx-labs"]
 }
 ```
 

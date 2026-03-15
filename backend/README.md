@@ -15,6 +15,7 @@ incoming source
 
 The visible frontend that consumes this backend is documented separately:
 
+- [README.md](/home/kpihx/Work/AI/HiBrown/insight/README.md)
 - [frontend/README.md](/home/kpihx/Work/AI/HiBrown/insight/frontend/README.md)
 
 ## What lives here
@@ -196,6 +197,19 @@ The target state is:
 ```text
 Passed: 9
 Failed: 0
+```
+
+## Current live demo path
+
+The strongest end-to-end demo path is now:
+
+```text
+WhatsApp sender alias kπx-labs
+-> resolved as David Brown (admin)
+-> message names Sarah Lee explicitly
+-> Gemini returns inferred_receivers + calendar_patch
+-> Parse Classified Event writes final receivers + assist.calendar_patch
+-> frontend opens the scheduling dialog for staff_1
 ```
 
 ## Backend documentation map

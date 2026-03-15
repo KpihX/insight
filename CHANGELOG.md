@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.3.0] - 2026-03-15
+- [x] Added a stable global scheduling dialog for live time events and propagated validated timetable patches to both Home and Calendar. [CODEX]
+- [x] Added a global non-time live toast and tuned its position and duration for hackathon visibility. [CODEX]
+- [x] Fixed the frontend live-event polling loop so the dialog trigger no longer cancels its own detail fetches before completion. [CODEX]
+- [x] Extended demo identity mapping: Sarah Lee now includes `nextgenproject373@gmail.com`, David Brown now includes `kapoivha@gmail.com`, and `kπx-labs` is recognized as an admin alias. [CODEX]
+- [x] Upgraded the ingestion workflow so direct WhatsApp messages without explicit receivers can infer canonical staff targets through `inferred_receivers`, while keeping `receivers` as the only final stored contract. [CODEX]
+- [x] Aligned the live demo story around a WhatsApp scheduling message for Tim Doe and documented the Vercel deployment path for the frontend. [CODEX]
+
 ## [1.2.0] - 2026-03-14
 - [x] Added a dedicated frontend runtime config so live/mock API mode, backend base URL, polling interval, and demo calendar focus can be changed without code spelunking. [ARCHIVE]
 - [x] Aligned the imported frontend with the explicit backend `assist.calendar_patch` contract in both types and UI flows. [ARCHIVE]

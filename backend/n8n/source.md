@@ -49,8 +49,12 @@ They are useful when:
 
 Current demo split:
 
-- `email_json_record` simulates an administrative meeting email targeted to `staff_1` (`Sarah Lee`) so the frontend can render a timetable patch.
+- `email_json_record` simulates an administrative email targeted to `staff_1` (`Sarah Lee`) about a parent meeting for Tim Doe so the frontend can render a timetable patch.
 - `msg_json_record` simulates a parent absence report so the frontend can show a standard live event card.
+
+For live WhatsApp demos, the staff directory also maps `kπx-labs` as an alias of `David Brown`, so a direct message sent with that display name is resolved as an administrative sender.
+
+When a connector does not provide explicit receivers, the model may return `inferred_receivers` based on clearly named staff targets in the message. The prompt receives a bounded list of candidate staff entries from `staff_directory`, so the model can choose canonical names such as `Sarah Lee` instead of partial labels. The final stored event still exposes only `receivers`: explicit receivers win, otherwise inferred receivers are resolved against `staff_directory`.
 
 ## Normalized event model
 

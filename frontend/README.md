@@ -4,6 +4,7 @@ This directory contains the visible teacher-facing prototype of `insight`.
 
 It is the interface that reviewers can see, while the n8n-first operational backend lives in:
 
+- [README.md](/home/kpihx/Work/AI/HiBrown/insight/README.md)
 - [backend/README.md](/home/kpihx/Work/AI/HiBrown/insight/backend/README.md)
 
 This repository now carries the local frontend source directly.
@@ -258,11 +259,30 @@ Required environment variables on Vercel:
 
 ```text
 VITE_USE_REAL_API=true
+VITE_DEBUG_LIVE_EVENTS=false
 VITE_API_BASE_URL=https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook
 VITE_DASHBOARD_ROLE=teacher
 VITE_DASHBOARD_STAFF_ID=staff_1
 VITE_REFRESH_INTERVAL_MS=15000
 VITE_DEMO_CALENDAR_WEEK_START=2026-03-16
+```
+
+Recommended first deployment flow:
+
+```text
+1. Import the repository into Vercel
+2. Set root directory = frontend
+3. Keep framework preset = Vite
+4. Add the VITE_* environment variables above
+5. Deploy
+```
+
+Recommended production sanity check after deploy:
+
+```text
+Home     -> loads Sarah Lee live briefing
+Inbox    -> shows live event feed for staff_1
+Calendar -> shows static timetable and validated overlays
 ```
 
 ## Demo scenarios currently targeted
@@ -301,6 +321,27 @@ and the frontend renders it as a timetable event
 through assist.calendar_patch
 ```
 
+### 3. Live WhatsApp scheduling message
+
+Live scenario:
+
+```text
+sender alias = kπx-labs
+resolved sender = David Brown (admin)
+target staff   = Sarah Lee (inferred from bounded staff candidates)
+student        = Tim Doe
+slot           = Tuesday, March 17, 2026 from 4:00 PM to 5:00 PM
+room           = Guidance Room B12
+```
+
+Expected UI effect:
+
+```text
+a scheduling dialog appears
+the proposed patch can be validated or edited
+the validated event then appears in Home and Calendar
+```
+
 ## Current frontend state
 
 The frontend now:
@@ -311,5 +352,8 @@ The frontend now:
 - computes the Wellbeing index from fetched backend-driven workload
 - opens the calendar around the injected backend meeting event
 - consumes `assist.calendar_patch` explicitly in Inbox and Calendar
+- surfaces non-time live events through a top-right toast
+- surfaces time events through a single global scheduling dialog
+- applies validated timetable patches locally so Home and Calendar stay synchronized
 
 The main remaining frontend work is product polish, not contract plumbing.
