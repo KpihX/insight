@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { LayoutGrid, Inbox, CheckSquare, Calendar as CalendarIcon } from 'lucide-react';
 import SchedulePatchDialog from './SchedulePatchDialog';
+import LiveDebugPanel from './LiveDebugPanel';
 
 export default function Layout() {
   const navItems = [
@@ -48,6 +49,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <SchedulePatchDialog />
+      <LiveDebugPanel />
     </div>
   );
 }

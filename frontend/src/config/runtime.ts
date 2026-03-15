@@ -9,6 +9,7 @@ const parseNumber = (value: string | undefined, fallback: number) => {
 };
 
 export const USE_REAL_API = parseBoolean(import.meta.env.VITE_USE_REAL_API, true);
+export const DEBUG_LIVE_EVENTS = parseBoolean(import.meta.env.VITE_DEBUG_LIVE_EVENTS, false);
 export const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ?? 'https://nextgen-n8n.westeurope.cloudapp.azure.com/webhook';
 export const DEFAULT_DASHBOARD_ROLE = import.meta.env.VITE_DASHBOARD_ROLE ?? 'teacher';
