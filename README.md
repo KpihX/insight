@@ -1,6 +1,6 @@
 # insight
 
-> **0 Trust — 100% Control | 0 Magic — 100% Transparency | 0 Hardcoding — 100% Flexibility**
+> **lightweight by design**
 
 `insight` is now organized as a small monorepo with two explicit parts:
 
