@@ -11,6 +11,11 @@ backend/  -> the n8n-first ingestion, storage, and API layer
 
 The current frontend source of truth lives directly in this repository under `frontend/`.
 
+## Live links
+
+- Web application: [insight on Vercel](https://insight-6roy3g9xb-kamdem-ivanns-projects.vercel.app?_vercel_share=Uyqvz5abqLHvz3rUVbiirCec9NXIzmKN)
+- Documentation mirror: [insight presentation](https://kpihx.github.io/insight-presentation/#/README.md)
+
 That split is intentional:
 
 ```text
@@ -28,6 +33,7 @@ insight/
 ├── README.md
 ├── frontend/
 ├── backend/
+├── presentation/  -> local GitHub Pages mirror (separate local repo)
 └── archive/
 ```
 

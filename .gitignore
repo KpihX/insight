@@ -22,6 +22,7 @@ qdrant-data/
 
 # Temporary local artifacts
 *.zip
+presentation/
 
 # Editor / OS
 .DS_Store
