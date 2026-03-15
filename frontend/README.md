@@ -1,4 +1,4 @@
-# insight frontend
+# insight frontend ✨
 
 This directory contains the visible teacher-facing prototype of `insight`.
 
@@ -13,7 +13,7 @@ This repository now carries the local frontend source directly.
 frontend/ = the current UI source of truth
 ```
 
-## What the frontend is
+## What the frontend is 🌬️
 
 The frontend is a Vite + React teacher workspace prototype organized around four screens:
 
@@ -49,7 +49,7 @@ REFRESH_INTERVAL_MS
 DEMO_CALENDAR_WEEK_START
 ```
 
-## Current API integration
+## Current API integration 🔌
 
 The API client lives in:
 
@@ -73,7 +73,7 @@ USE_REAL_API=false -> intentionally different local mock experience
 
 The mock mode is intentionally kept visually and semantically different from the live Sarah Lee demo so reviewers can immediately tell which data source is active.
 
-## Relevant local files
+## Relevant local files 🗂️
 
 ```text
 frontend/

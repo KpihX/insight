@@ -1,4 +1,4 @@
-# insight
+# insight ✨
 
 > **lightweight by design**
 
@@ -11,7 +11,7 @@ backend/  -> the n8n-first ingestion, storage, and API layer
 
 The current frontend source of truth lives directly in this repository under `frontend/`.
 
-## Live links
+## Live links 🌐
 
 - Web application: [insight on Vercel](https://insight-6roy3g9xb-kamdem-ivanns-projects.vercel.app?_vercel_share=Uyqvz5abqLHvz3rUVbiirCec9NXIzmKN)
 - Documentation mirror: [insight presentation](https://kpihx.github.io/insight-presentation/#/README.md)
@@ -26,7 +26,7 @@ communication ingestion + classification + persistence + APIs
 -> backend/
 ```
 
-## Repository map
+## Repository map 🗂️
 
 ```text
 insight/
@@ -37,7 +37,7 @@ insight/
 └── archive/
 ```
 
-## Where to start
+## Where to start 🧭
 
 - [README.md](README.md) — monorepo overview and documentation map
 - [frontend/README.md](frontend/README.md) — UI structure, local development, current API wiring, and demo behavior
@@ -45,7 +45,7 @@ insight/
 - [CHANGELOG.md](CHANGELOG.md) — project evolution log
 - [TODO.md](TODO.md) — current roadmap
 
-## Project posture
+## Project posture 🏛️
 
 The frontend and backend are intentionally decoupled:
 
@@ -66,7 +66,7 @@ The backend is documented as the source of truth for:
 - the WhatsApp bridge runtime,
 - and the local reconstruction instructions for another n8n instance.
 
-## Current demo posture
+## Current demo posture 🌬️
 
 The repository is currently aligned around one concrete live flow:
 
@@ -81,7 +81,7 @@ WhatsApp admin message
 
 The frontend is also ready for a first static deployment on Vercel, while the backend remains hosted through the published n8n endpoints.
 
-## Archive note
+## Archive note 📦
 
 `archive/` keeps provenance material only:
 

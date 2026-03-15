@@ -1,4 +1,4 @@
-# insight backend
+# insight backend ⚙️
 
 > `insight` backend is the n8n-first operational layer of the project.
 
@@ -18,7 +18,7 @@ The visible frontend that consumes this backend is documented separately:
 - [README.md](../README.md)
 - [frontend/README.md](../frontend/README.md)
 
-## What lives here
+## What lives here 🗂️
 
 ```text
 backend/
@@ -32,7 +32,7 @@ backend/
 └── n8n/
 ```
 
-## Runtime split
+## Runtime split 🌐
 
 ### Published workflows
 
@@ -55,7 +55,7 @@ manual
 -> live ingestion and demo preparation, triggered on demand
 ```
 
-## Backend responsibilities
+## Backend responsibilities 🏛️
 
 The backend owns:
 
@@ -68,7 +68,7 @@ The backend owns:
 - demo reset and seed workflows,
 - and the WhatsApp relay runtime.
 
-## API surface
+## API surface 🔌
 
 Base URL:
 
