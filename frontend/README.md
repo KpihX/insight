@@ -1,6 +1,6 @@
-# insight frontend ✨
+# SapientAI frontend ✨
 
-This directory contains the visible teacher-facing prototype of `insight`.
+This directory contains the visible teacher-facing product surface of `SapientAI`.
 
 It is the interface that reviewers can see, while the n8n-first operational backend lives in:
 
@@ -10,7 +10,7 @@ It is the interface that reviewers can see, while the n8n-first operational back
 This repository now carries the local frontend source directly.
 
 ```text
-frontend/ = the current UI source of truth
+frontend/ = the current SapientAI UI source of truth
 ```
 
 ## What the frontend is 🌬️
@@ -149,7 +149,7 @@ That is exactly what makes it useful for the hackathon:
 
 ```text
 static teacher timetable
-    + dynamic insight event overlay
+    + dynamic SapientAI event overlay
 ```
 
 The injected event comes from `assist.calendar_patch`, not from frontend regex guessing.

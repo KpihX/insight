@@ -23,6 +23,34 @@ const {
 } = input;
 
 const normalize = (value) => String(value ?? '').trim().toLowerCase();
+const timezone = 'Europe/Paris';
+
+const parseEventDate = (value) => {
+  const parsed = new Date(value ?? '');
+  return Number.isNaN(parsed.getTime()) ? new Date() : parsed;
+};
+
+const formatTemporalContext = (date) => {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    weekday: 'long',
+  }).formatToParts(date);
+
+  const getPart = (type) => parts.find((part) => part.type === type)?.value ?? '';
+  return {
+    message_timestamp_utc: date.toISOString(),
+    message_timestamp_local: `${getPart('year')}-${getPart('month')}-${getPart('day')} ${getPart('hour')}:${getPart('minute')} ${timezone}`,
+    reference_date: `${getPart('year')}-${getPart('month')}-${getPart('day')}`,
+    reference_weekday: getPart('weekday'),
+    timezone,
+  };
+};
 
 const matchStaffByToken = (token) => {
   const needle = normalize(token);
@@ -119,5 +147,6 @@ return [{
     receivers: resolveReceivers(),
     sender_group: resolveSenderGroup(),
     received_at: new Date().toISOString(),
+    temporal_context: formatTemporalContext(parseEventDate(event.timestamp)),
   },
 }];

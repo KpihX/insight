@@ -1,20 +1,20 @@
-# insight ✨
+# SapientAI frontend + insight backend ✨
 
 > **lightweight by design**
 
-`insight` is now organized as a small monorepo with two explicit parts:
+This monorepo is now organized around two explicit layers:
 
 ```text
-frontend/ -> the visible teacher-facing product surface
-backend/  -> the n8n-first ingestion, storage, and API layer
+frontend/ -> the visible SapientAI teacher-facing product surface
+backend/  -> the insight n8n-first ingestion, storage, and API layer
 ```
 
 The current frontend source of truth lives directly in this repository under `frontend/`.
 
 ## Live links 🌐
 
-- Web application: [insight on Vercel](https://insight-6roy3g9xb-kamdem-ivanns-projects.vercel.app?_vercel_share=Uyqvz5abqLHvz3rUVbiirCec9NXIzmKN)
-- Documentation mirror: [insight presentation](https://kpihx.github.io/insight-presentation/#/README.md)
+- Web application: [SapientAI on Vercel](https://insight-6roy3g9xb-kamdem-ivanns-projects.vercel.app?_vercel_share=Uyqvz5abqLHvz3rUVbiirCec9NXIzmKN)
+- Documentation mirror: [SapientAI presentation](https://kpihx.github.io/insight-presentation/#/README.md)
 
 That split is intentional:
 
@@ -50,11 +50,11 @@ insight/
 The frontend and backend are intentionally decoupled:
 
 ```text
-frontend refresh
+SapientAI frontend refresh
 -> calls published backend routes
 
 backend
--> remains the canonical ingestion + event system
+-> remains the canonical insight ingestion + event system
 ```
 
 The backend is documented as the source of truth for:
@@ -79,7 +79,7 @@ WhatsApp admin message
 -> validated overlay in Home + Calendar
 ```
 
-The frontend is also ready for a first static deployment on Vercel, while the backend remains hosted through the published n8n endpoints.
+The SapientAI frontend is deployed on Vercel, while the backend remains hosted through the published n8n endpoints and still keeps the `insight` runtime naming for workflow stability.
 
 ## Archive note 📦
 

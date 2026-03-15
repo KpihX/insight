@@ -18,6 +18,15 @@ The visible frontend that consumes this backend is documented separately:
 - [README.md](../README.md)
 - [frontend/README.md](../frontend/README.md)
 
+Public naming note:
+
+```text
+frontend product brand -> SapientAI
+backend runtime name   -> insight
+```
+
+That split is intentional so the user-facing brand can evolve without breaking n8n workflow names, storage keys, or published backend contracts.
+
 ## What lives here 🗂️
 
 ```text

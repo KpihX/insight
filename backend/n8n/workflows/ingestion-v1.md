@@ -60,3 +60,5 @@ Current demo scenarios:
 For live WhatsApp tests, `David Brown` also exposes the alias `kπx-labs` in `staff_directory`, so the `pre-classify` step can resolve the sender from `fromName` even when the WhatsApp contact identifier is opaque.
 
 For direct WhatsApp messages without explicit receiver metadata, the model can also return `inferred_receivers`. The prompt is enriched with candidate staff entries from `staff_directory` so the model can pick exact canonical names. `Parse Classified Event` keeps the same final storage contract by writing only `receivers`, using explicit values first and inferred receiver tokens only as a fallback.
+
+`pre-classify` also derives a `temporal_context` block from the normalized event timestamp. The model uses this anchor to resolve relative expressions such as `tomorrow`, `next week`, or `next Tuesday` into explicit ISO dates inside `calendar_patch.date`.
