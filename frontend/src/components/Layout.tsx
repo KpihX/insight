@@ -3,8 +3,11 @@ import { LayoutGrid, Inbox, CheckSquare, Calendar as CalendarIcon } from 'lucide
 import SchedulePatchDialog from './SchedulePatchDialog';
 import LiveEventToast from './LiveEventToast';
 import LiveDebugPanel from './LiveDebugPanel';
+import { useSchedulePatch } from '../contexts/SchedulePatchContext'; // <--- ADDED IMPORT
 
 export default function Layout() {
+
+  const { currentSuggestion } = useSchedulePatch(); // <--- ADDED HOOK CALL
   const navItems = [
     { to: '/', icon: LayoutGrid, label: 'Home' },
     { to: '/inbox', icon: Inbox, label: 'Inbox' },
@@ -62,7 +65,8 @@ export default function Layout() {
         lightweight by design
       </div>
       <LiveEventToast />
-      <SchedulePatchDialog />
+      {/* <SchedulePatchDialog /> */}
+      {currentSuggestion && <SchedulePatchDialog />}
       <LiveDebugPanel />
     </div>
   );
