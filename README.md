@@ -13,7 +13,7 @@ The current frontend source of truth lives directly in this repository under `fr
 
 ## Live links 🌐
 
-- Web application: [SapientAI on Vercel](https://insight-6roy3g9xb-kamdem-ivanns-projects.vercel.app?_vercel_share=Uyqvz5abqLHvz3rUVbiirCec9NXIzmKN)
+- Web application: [SapientAI on Vercel](https://insight-rose.vercel.app)
 - Documentation mirror: [SapientAI presentation](https://kpihx.github.io/insight-presentation/#/README.md)
 
 That split is intentional:
@@ -34,7 +34,7 @@ insight/
 ├── frontend/
 ├── backend/
 ├── presentation/  -> local GitHub Pages mirror (separate local repo)
-└── archive/
+└── refs/
 ```
 
 ## Where to start 🧭
@@ -81,9 +81,9 @@ WhatsApp admin message
 
 The SapientAI frontend is deployed on Vercel, while the backend remains hosted through the published n8n endpoints and still keeps the `insight` runtime naming for workflow stability.
 
-## Archive note 📦
+## Provenance note 📦
 
-`archive/` keeps provenance material only:
+`refs/` keeps provenance material only:
 
 - old prototype traces,
 - pitch assets,
